@@ -96,4 +96,80 @@ aws iam create-access-key --user-name Joao
 ```
 
 ---
+---
+
+## 🛡️ Criar Políticas no IAM
+
+As **políticas** (policies) definem permissões na AWS em formato **JSON**, especificando:
+- **Ação (Action)** → O que pode ser feito (ex.: `s3:ListBucket`).
+- **Recurso (Resource)** → Onde a ação pode ser executada (ex.: um bucket S3 específico).
+- **Efeito (Effect)** → Permitir (`Allow`) ou negar (`Deny`).
+
+---
+
+### 📌 Criando Política pelo Console AWS
+
+1. No Console AWS, acesse **IAM** → **Policies** → **Create policy**.
+2. Escolha:
+   - **Visual editor** → Interface guiada.
+   - **JSON** → Escrever manualmente.
+3. Defina as permissões.
+4. Adicione nome e descrição.
+5. Criar a política.
+
+---
+
+### 📜 Exemplo de Política JSON
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:us-east-1:123456789012:instance/i-0abcd1234efgh5678"
+            ]
+        }
+    ]
+}
+```
+Essa política **permite iniciar e parar** apenas uma instância EC2 específica.
+
+---
+
+### 🖥️ Criar Política via AWS CLI
+
+```bash
+# Criar política a partir de um arquivo JSON
+aws iam create-policy \
+    --policy-name EC2StartStopOnly \
+    --policy-document file://minha-politica.json
+```
+
+---
+
+### 📂 Estrutura de um Documento de Política
+
+- **Version** → Versão do formato de política (use sempre `"2012-10-17"`).
+- **Statement** → Lista de permissões.
+  - **Effect**: `"Allow"` ou `"Deny"`.
+  - **Action**: Lista de ações permitidas ou negadas.
+  - **Resource**: ARN do recurso ou `"*"` para todos.
+  - (Opcional) **Condition**: Restrições extras.
+
+---
+
+### 🔒 Boas Práticas ao Criar Políticas
+
+- Usar **ARNs específicos** em vez de `"*"` para restringir escopo.
+- Criar políticas **customizadas** apenas quando necessário — preferir **Managed Policies** da AWS.
+- Adicionar **tags** para facilitar organização e auditoria.
+- Testar no **IAM Policy Simulator** antes de aplicar.
+
+---
 
