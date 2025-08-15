@@ -172,4 +172,76 @@ aws iam create-policy \
 - Testar no **IAM Policy Simulator** antes de aplicar.
 
 ---
+---
+
+## 🔐 Política de Senhas no IAM (AWS)
+
+A **política de senhas** define regras para a criação e gerenciamento de senhas de usuários do IAM.  
+Essa configuração **afeta todos os usuários IAM** da conta.
+
+---
+
+### 📌 Configurando pelo Console AWS
+
+1. No Console AWS, acesse:
+   **IAM** → **Account settings** → **Password policy**.
+2. Clique em **Set password policy**.
+3. Configure opções como:
+   - Comprimento mínimo da senha.
+   - Exigência de caracteres maiúsculos, minúsculos, números e símbolos.
+   - Expiração automática de senha.
+   - Histórico de senhas (impede repetição).
+4. Salve a política.
+
+---
+
+### 📜 Exemplo de Política de Senha Recomendada
+
+| Configuração | Valor Sugerido |
+|--------------|----------------|
+| Comprimento mínimo | 12 caracteres |
+| Letra maiúscula obrigatória | Sim |
+| Letra minúscula obrigatória | Sim |
+| Número obrigatório | Sim |
+| Caractere especial obrigatório | Sim |
+| Expiração de senha | 90 dias |
+| Histórico de senhas | Últimas 5 não podem ser reutilizadas |
+| Permitir alteração própria | Sim |
+| Exigir redefinição na criação | Sim |
+
+---
+
+### 🖥️ Configurando via AWS CLI
+
+```bash
+aws iam update-account-password-policy \
+    --minimum-password-length 12 \
+    --require-symbols \
+    --require-numbers \
+    --require-uppercase-characters \
+    --require-lowercase-characters \
+    --allow-users-to-change-password \
+    --max-password-age 90 \
+    --password-reuse-prevention 5
+```
+
+---
+
+### 🔎 Verificando a Política Atual
+
+```bash
+aws iam get-account-password-policy
+```
+
+---
+
+### 🔒 Boas Práticas
+
+- Usar **12+ caracteres**.
+- Exigir **caracteres mistos** (maiúsculo, minúsculo, número, símbolo).
+- Aplicar **MFA** para maior segurança.
+- Revisar periodicamente a política.
+- Não permitir senhas fracas ou genéricas.
+
+---
 
