@@ -652,5 +652,6 @@ aws elbv2 register-targets \
 
 <img width="1139" height="567" alt="image" src="https://github.com/user-attachments/assets/c6c192f7-c645-421d-80c6-4d4923ae8d22" />
 
+<img width="765" height="329" alt="image" src="https://github.com/user-attachments/assets/469c66ac-6db9-4e0a-8de1-e9a017d45e60" />
 
 
