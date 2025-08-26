@@ -245,3 +245,196 @@ aws iam get-account-password-policy
 
 ---
 
+# ☁️ Amazon EC2
+
+O **Amazon EC2 (Elastic Compute Cloud)** é um serviço da AWS que fornece capacidade de computação escalável na nuvem.  
+Ele permite criar e gerenciar **instâncias (máquinas virtuais)** de acordo com a demanda.
+
+---
+
+## 🔑 Principais características
+
+- Criação de servidores virtuais (instâncias) sob demanda.
+- Diversos tipos de instâncias: otimizadas para CPU, memória, armazenamento ou GPU.
+- Integração com outros serviços AWS (S3, RDS, CloudWatch, etc).
+- Escalabilidade: ajuste de capacidade automaticamente com **Auto Scaling**.
+- Segurança: uso de **Security Groups**, **VPC** e **Key Pairs**.
+
+---
+
+## 🛠️ Passos básicos para criar uma instância EC2
+
+1. Acesse o **Console da AWS** e vá até **EC2**.
+2. Clique em **Launch Instance**.
+3. Escolha:
+   - Uma **AMI (Amazon Machine Image)** → ex: Ubuntu, Amazon Linux, etc.
+   - O **tipo da instância** → ex: `t2.micro` (free tier).
+4. Configure:
+   - **Key Pair** → necessário para login via SSH.
+   - **Security Group** → defina portas abertas (ex: 22/SSH, 80/HTTP).
+5. Revise e clique em **Launch**.
+6. Sua instância estará disponível no painel.
+
+---
+
+## 💻 Conectar via SSH
+
+No terminal:
+
+```bash
+ssh -i "sua-chave.pem" ubuntu@ip_publico_da_instancia
+```
+
+Exemplo:
+
+```bash
+ssh -i "minha-chave.pem" ec2-user@54.210.123.45
+```
+
+---
+
+## 📦 Exemplos de uso
+
+- Hospedar sites com **Nginx ou Apache**.
+- Rodar containers com **Docker**.
+- Servidores de banco de dados ou aplicações corporativas.
+- Ambientes de testes e desenvolvimento.
+
+---
+
+> ✅ O EC2 é a base da AWS para servidores virtuais na nuvem, ideal para aprender infraestrutura e implantar aplicações.
+
+# 💾 Amazon EBS e Snapshots
+
+## 📌 O que é EBS?
+
+O **Amazon EBS (Elastic Block Store)** é o serviço de armazenamento em bloco da AWS.  
+Ele é usado principalmente para fornecer **volumes persistentes** que podem ser anexados a instâncias **EC2**.
+
+### 🔑 Características do EBS
+
+- Armazenamento **persistente**: os dados permanecem mesmo após desligar a instância.
+- Pode ser anexado/desanexado de uma instância EC2.
+- Tipos de volumes: otimizados para **desempenho** (SSD) ou **custo/armazenamento** (HDD).
+- Criptografia nativa com **KMS**.
+- Permite **resize** (aumentar tamanho e mudar tipo de volume sem parar instância).
+
+---
+
+## 📌 O que são Snapshots?
+
+Um **Snapshot** é uma **cópia pontual (backup)** de um volume EBS.  
+Eles são armazenados no **Amazon S3** (internamente) e podem ser usados para:
+
+- Restaurar volumes em caso de falhas.
+- Criar novos volumes a partir de um snapshot existente.
+- Migrar volumes entre **regiões** ou **contas AWS**.
+
+---
+
+## 🛠️ Exemplos de uso
+
+### ➕ Criar um volume EBS e anexar a uma instância
+
+```bash
+# Criar volume de 20 GB na zona us-east-1a
+aws ec2 create-volume \
+  --size 20 \
+  --availability-zone us-east-1a \
+  --volume-type gp2
+
+# Anexar o volume criado a uma instância
+aws ec2 attach-volume \
+  --volume-id vol-1234567890abcdef0 \
+  --instance-id i-1234567890abcdef0 \
+  --device /dev/sdf
+```
+
+---
+
+### 📸 Criar um Snapshot
+
+```bash
+aws ec2 create-snapshot \
+  --volume-id vol-1234567890abcdef0 \
+  --description "Backup do volume de dados"
+```
+
+---
+
+### 🔄 Criar volume a partir de um Snapshot
+
+```bash
+aws ec2 create-volume \
+  --snapshot-id snap-1234567890abcdef0 \
+  --availability-zone us-east-1a \
+  --volume-type gp2
+```
+
+---
+
+## ✅ Resumindo
+
+- **EBS** → Armazenamento em bloco para EC2.  
+- **Snapshot** → Backup/cópia de segurança de um volume EBS.  
+
+Combinando os dois, você garante **persistência, recuperação e escalabilidade** para os dados em sua infraestrutura na AWS.
+# 🖼️ Amazon Machine Image (AMI)
+
+## 📌 O que é uma AMI?
+
+A **Amazon Machine Image (AMI)** é uma **imagem pré-configurada** usada para lançar instâncias no **Amazon EC2**.  
+Ela contém todas as informações necessárias para iniciar uma máquina virtual na AWS, incluindo:
+
+- Um **sistema operacional** (Linux, Windows, etc.)
+- **Configurações do sistema**
+- Softwares e pacotes pré-instalados
+- Permissões de acesso (quem pode usar a AMI)
+
+---
+
+## 🔑 Tipos de AMIs
+
+1. **AMIs da AWS**  
+   - Fornecidas oficialmente pela Amazon (ex: Amazon Linux 2).  
+
+2. **AMIs da Comunidade**  
+   - Criadas e disponibilizadas por outros usuários da AWS.  
+
+3. **AMIs Personalizadas**  
+   - Criadas a partir de instâncias existentes, com seus softwares e configurações específicas.  
+
+4. **AMIs do Marketplace**  
+   - Imagens pagas ou gratuitas fornecidas por terceiros (ex: Ubuntu Pro, Red Hat, Windows Server, softwares prontos).  
+
+---
+
+## 🛠️ Criar uma AMI personalizada
+
+1. Configure sua instância EC2 (instale pacotes, configure serviços, etc.).
+2. No console da AWS, selecione a instância.
+3. Clique em **Actions → Image and templates → Create image**.
+4. Defina nome e descrição.
+5. A AWS criará a AMI e ela ficará disponível para lançar novas instâncias.
+
+---
+
+## 💻 Exemplo com AWS CLI
+
+Criar uma AMI a partir de uma instância em execução:
+
+```bash
+aws ec2 create-image \
+  --instance-id i-1234567890abcdef0 \
+  --name "minha-ami-personalizada" \
+  --description "AMI com Nginx instalado"
+```
+
+---
+
+## ✅ Resumindo
+
+- A **AMI** é como um **template de servidor**.  
+- Serve para padronizar ambientes, acelerar deploys e facilitar escalabilidade.  
+- Você pode usar AMIs prontas (da AWS ou comunidade) ou criar as suas personalizadas.
+
