@@ -577,5 +577,80 @@ O **AWS Lambda** é um serviço de computação serverless da Amazon que permite
 
 > O Lambda é ideal para workloads event-driven, enquanto servidores tradicionais podem ser melhores para aplicações persistentes ou de longa execução.
 >
-<img width="1138" height="561" alt="image" src="https://github.com/user-attachments/assets/e447208d-2506-4d62-98bb-c1b66767cc43" />
+# ⚖️ Load Balancers
+
+## 📌 O que é um Load Balancer?
+
+Um **Load Balancer** distribui automaticamente o tráfego de rede ou de aplicações entre **múltiplos servidores ou instâncias**, garantindo:
+
+- Alta disponibilidade
+- Melhor desempenho
+- Tolerância a falhas
+
+No contexto da AWS, o serviço é chamado **Elastic Load Balancing (ELB)**.
+
+---
+
+## 🔑 Tipos de Load Balancers na AWS
+
+1. **Application Load Balancer (ALB)**  
+   - Trabalha na camada 7 (HTTP/HTTPS).  
+   - Ideal para aplicações web, suporte a rotas baseadas em URL, host ou headers.
+
+2. **Network Load Balancer (NLB)**  
+   - Trabalha na camada 4 (TCP/UDP).  
+   - Alta performance e baixa latência, ideal para cargas pesadas ou aplicações em tempo real.
+
+3. **Classic Load Balancer (CLB)**  
+   - Legado, funciona na camada 4 e 7, mas sem todos os recursos avançados do ALB e NLB.
+
+---
+
+## 🛠️ Como funciona
+
+- O LB recebe requisições de clientes.  
+- Ele distribui essas requisições para **instâncias saudáveis** do seu grupo de destino.  
+- Realiza **health checks** periódicos para detectar instâncias com problemas e removê-las do pool temporariamente.
+
+---
+
+## 💻 Exemplo de criação de Load Balancer via AWS CLI
+
+```bash
+# Criar um Application Load Balancer
+aws elbv2 create-load-balancer \
+  --name meu-alb \
+  --subnets subnet-12345 subnet-67890 \
+  --security-groups sg-123456 \
+  --scheme internet-facing \
+  --type application
+```
+
+```bash
+# Criar target group para o ALB
+aws elbv2 create-target-group \
+  --name meu-targets \
+  --protocol HTTP \
+  --port 80 \
+  --vpc-id vpc-123456
+```
+
+```bash
+# Registrar instâncias no target group
+aws elbv2 register-targets \
+  --target-group-arn arn:aws:elasticloadbalancing:...:targetgroup/meu-targets \
+  --targets Id=i-123456 Id=i-789012
+```
+
+---
+
+## ✅ Resumindo
+
+- Load Balancer distribui tráfego entre várias instâncias, aumentando **disponibilidade e escalabilidade**.  
+- Na AWS, você pode escolher ALB, NLB ou CLB dependendo do tipo de aplicação.  
+- Integração com **Auto Scaling** garante que novas instâncias sejam automaticamente adicionadas ao balanceamento.
+
+<img width="1139" height="567" alt="image" src="https://github.com/user-attachments/assets/c6c192f7-c645-421d-80c6-4d4923ae8d22" />
+
+
 
