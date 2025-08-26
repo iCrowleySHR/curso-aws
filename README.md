@@ -438,3 +438,59 @@ aws ec2 create-image \
 - Serve para padronizar ambientes, acelerar deploys e facilitar escalabilidade.  
 - Você pode usar AMIs prontas (da AWS ou comunidade) ou criar as suas personalizadas.
 
+# 🏗️ EC2 Image Builder
+
+## 📌 O que é o EC2 Image Builder?
+
+O **EC2 Image Builder** é um serviço da AWS que automatiza a **criação, teste e atualização de AMIs** (Amazon Machine Images).  
+Ele permite manter imagens sempre atualizadas, seguras e consistentes para suas instâncias EC2.
+
+---
+
+## 🔑 Principais funcionalidades
+
+- Criar **AMIs automatizadas** com softwares pré-instalados.
+- Aplicar **patches de segurança** automaticamente.
+- Testar imagens antes de disponibilizá-las.
+- Integrar com **AWS Lambda, CloudWatch e S3** para pipelines automatizadas.
+- Reduz erros e trabalho manual na manutenção de imagens.
+
+---
+
+## 🛠️ Como funciona
+
+1. **Pipeline de imagens**  
+   Define as etapas para criar e configurar a AMI.
+
+2. **Componentes**  
+   Scripts ou pacotes que serão instalados ou configurados na imagem.
+
+3. **Distribuição**  
+   Após a criação e teste, a AMI pode ser distribuída para regiões específicas.
+
+---
+
+## 💻 Exemplo de criação de AMI com AWS CLI
+
+Criar um pipeline simples (exemplo resumido):
+
+```bash
+aws imagebuilder create-image-pipeline \
+  --name "MeuPipelineAMI" \
+  --image-recipe-arn arn:aws:imagebuilder:us-east-1:123456789012:image-recipe/meu-recipe/1.0.0 \
+  --infrastructure-configuration-arn arn:aws:imagebuilder:us-east-1:123456789012:infrastructure-configuration/minha-infra-config \
+  --distribution-configuration-arn arn:aws:imagebuilder:us-east-1:123456789012:distribution-configuration/minha-dist-config
+```
+
+> Observação:  
+> - A `image-recipe` define qual SO, softwares e configurações a AMI terá.  
+> - A `infrastructure-configuration` define como a imagem será construída (tipo de instância, VPC, sub-rede).  
+> - A `distribution-configuration` define para quais regiões a AMI será disponibilizada.
+
+---
+
+## ✅ Resumindo
+
+- O **EC2 Image Builder** automatiza a criação e atualização de AMIs.  
+- Facilita manter imagens consistentes, seguras e prontas para deploy.  
+- Ideal para ambientes corporativos que precisam de **padronização e compliance**.
