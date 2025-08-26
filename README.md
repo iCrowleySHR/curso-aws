@@ -651,7 +651,8 @@ aws elbv2 register-targets \
 - Integração com **Auto Scaling** garante que novas instâncias sejam automaticamente adicionadas ao balanceamento.
 
 <img width="1139" height="567" alt="image" src="https://github.com/user-attachments/assets/c6c192f7-c645-421d-80c6-4d4923ae8d22" />
+<br>
+<img width="991" height="678" alt="image" src="https://github.com/user-attachments/assets/ec8a7393-c7f1-40b5-a5de-97e64c84da65" />
 
-<img width="765" height="329" alt="image" src="https://github.com/user-attachments/assets/469c66ac-6db9-4e0a-8de1-e9a017d45e60" />
 
 
