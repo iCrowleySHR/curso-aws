@@ -494,3 +494,45 @@ aws imagebuilder create-image-pipeline \
 - O **EC2 Image Builder** automatiza a criação e atualização de AMIs.  
 - Facilita manter imagens consistentes, seguras e prontas para deploy.  
 - Ideal para ambientes corporativos que precisam de **padronização e compliance**.
+
+# Amazon EFS (Elastic File System)
+
+O **Amazon Elastic File System (EFS)** é um serviço de armazenamento de arquivos totalmente gerenciado e escalável, ideal para aplicações que precisam de acesso simultâneo a arquivos por múltiplas instâncias, como servidores web, containers e funções serverless.
+
+---
+
+## 💰 Preços do Amazon EFS
+
+O custo varia conforme a classe de armazenamento e a região. Exemplo para **EUA Leste (N. Virgínia)**:
+
+| Classe de armazenamento        | Preço por GB/mês |
+|--------------------------------|----------------|
+| EFS Standard                   | US$ 0,30       |
+| EFS Infrequent Access (IA)    | US$ 0,025      |
+| EFS One Zone                   | US$ 0,16       |
+| EFS One Zone IA                | US$ 0,0133     |
+| Provisioned Throughput         | US$ 6 por MB/s/mês |
+
+> Além disso, podem haver cobranças adicionais por operações de leitura e escrita, especialmente nas classes IA e One Zone IA.
+
+---
+
+## 🇧🇷 Disponibilidade no Brasil
+
+- Data centers localizados em São Paulo.  
+- Faturamento em Reais (BRL) com emissão de nota fiscal eletrônica (NFS-e).  
+
+---
+
+## 📊 Comparativo: Google Drive vs. Amazon EFS
+
+| Recurso                     | Google Drive                          | Amazon EFS                                  |
+|------------------------------|--------------------------------------|---------------------------------------------|
+| **Modelo de cobrança**        | Por usuário                           | Por GB armazenado e operações realizadas    |
+| **Facilidade de uso**         | Alta (interface amigável)             | Requer configuração técnica                 |
+| **Escalabilidade**            | Limitada                              | Altamente escalável                         |
+| **Controle e personalização** | Baixo                                 | Alto                                        |
+| **Integração com sistemas**   | Limitada                              | Total (ideal para aplicações empresariais) |
+| **Preço por GB**              | Não aplicável                          | US$ 0,30/mês (EFS Standard)                |
+
+> O Google Drive é mais indicado para uso pessoal ou pequenos grupos, enquanto o Amazon EFS é ideal para empresas que precisam de alta disponibilidade, escalabilidade e integração com outras soluções na nuvem.
