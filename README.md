@@ -576,3 +576,6 @@ O **AWS Lambda** é um serviço de computação serverless da Amazon que permite
 | **Tempo de execução máximo**  | Ilimitado                  | 15 minutos por invocação       |
 
 > O Lambda é ideal para workloads event-driven, enquanto servidores tradicionais podem ser melhores para aplicações persistentes ou de longa execução.
+>
+<img width="1138" height="561" alt="image" src="https://github.com/user-attachments/assets/e447208d-2506-4d62-98bb-c1b66767cc43" />
+
