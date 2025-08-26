@@ -536,3 +536,43 @@ O custo varia conforme a classe de armazenamento e a região. Exemplo para **EUA
 | **Preço por GB**              | Não aplicável                          | US$ 0,30/mês (EFS Standard)                |
 
 > O Google Drive é mais indicado para uso pessoal ou pequenos grupos, enquanto o Amazon EFS é ideal para empresas que precisam de alta disponibilidade, escalabilidade e integração com outras soluções na nuvem.
+
+# AWS Lambda
+
+O **AWS Lambda** é um serviço de computação serverless da Amazon que permite executar código sem provisionar ou gerenciar servidores. Você paga apenas pelo tempo de execução do código e pelo número de solicitações. Ideal para automação, APIs, processamento de dados em tempo real e integração com outros serviços da AWS.
+
+---
+
+## 💡 Principais características do AWS Lambda
+
+- **Execução sob demanda**: O código é executado apenas quando necessário.  
+- **Escalabilidade automática**: O Lambda escala automaticamente com o volume de solicitações.  
+- **Suporte a várias linguagens**: Python, Node.js, Java, Go, Ruby, .NET e custom runtimes.  
+- **Integração com AWS**: Funciona com S3, DynamoDB, SNS, SQS, API Gateway, CloudWatch, entre outros.  
+- **Modelo de cobrança**: Baseado em número de solicitações e duração da execução (GB-segundo).
+
+---
+
+## 💰 Preços do AWS Lambda
+
+| Métrica                         | Limite Gratuito              | Preço após limite                           |
+|---------------------------------|------------------------------|--------------------------------------------|
+| **Solicitações**                 | 1 milhão/mês                | US$ 0,20 por 1 milhão de solicitações      |
+| **Duração da execução**          | 400.000 GB-segundos/mês     | US$ 0,0000166667 por GB-segundo            |
+
+> Exemplo: Uma função de 512 MB rodando por 1 segundo gera 0,5 GB-segundo de custo.
+
+---
+
+## 📊 Comparativo rápido: Lambda vs Servidores tradicionais
+
+| Recurso                     | Servidor Tradicional         | AWS Lambda                     |
+|------------------------------|----------------------------|--------------------------------|
+| **Modelo de execução**        | Servidor sempre ligado      | Sob demanda (serverless)       |
+| **Escalabilidade**            | Manual ou semi-automática   | Automática                     |
+| **Custo**                     | Fixo (mesmo sem uso)        | Só paga pelo uso               |
+| **Manutenção**                | Alta (SO, updates, patches) | Baixa (totalmente gerenciado) |
+| **Integração com AWS**        | Limitada                   | Total                          |
+| **Tempo de execução máximo**  | Ilimitado                  | 15 minutos por invocação       |
+
+> O Lambda é ideal para workloads event-driven, enquanto servidores tradicionais podem ser melhores para aplicações persistentes ou de longa execução.
