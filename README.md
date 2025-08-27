@@ -655,4 +655,50 @@ aws elbv2 register-targets \
 <img width="991" height="678" alt="image" src="https://github.com/user-attachments/assets/ec8a7393-c7f1-40b5-a5de-97e64c84da65" />
 
 
+# 🔄 Auto Scaling Group (ASG)
+
+## 📌 O que é um Auto Scaling Group?
+
+Um **Auto Scaling Group** é um recurso da AWS que gerencia automaticamente a **quantidade de instâncias EC2** em execução.  
+Ele garante que sua aplicação esteja sempre disponível, ajustando os recursos conforme a demanda e substituindo instâncias com falha.
+
+---
+
+## 🔑 Principais conceitos
+
+- **Launch Template/Configuration** → Define como as instâncias serão criadas (AMI, tipo de instância, rede, etc).  
+- **Desired Capacity** → Número de instâncias desejadas em execução.  
+- **Min/Max Size** → Limites mínimo e máximo de instâncias no grupo.  
+- **Scaling Policies** → Regras que aumentam ou reduzem instâncias com base em métricas (ex: CPU, memória, requisições).  
+- **Health Checks** → Monitoram instâncias; se uma falhar, o ASG a substitui automaticamente.  
+- **Distribuição em AZs** → O ASG pode criar instâncias em várias Zonas de Disponibilidade, aumentando a resiliência.  
+
+---
+
+## 🛠️ Como funciona na prática
+
+1. Você define um **modelo de instância** (Launch Template).  
+2. O **ASG** inicia as instâncias com base nesse modelo.  
+3. O grupo mantém sempre a **quantidade desejada** de instâncias:  
+   - Se uma instância falhar → é substituída.  
+   - Se a demanda aumentar → novas instâncias são criadas.  
+   - Se a demanda cair → instâncias são encerradas.  
+
+---
+
+## ✅ Benefícios
+
+- **Alta disponibilidade** → sempre mantém instâncias ativas e saudáveis.  
+- **Escalabilidade automática** → responde a mudanças de tráfego ou carga.  
+- **Otimização de custos** → apenas os recursos necessários são usados.  
+- **Integração com Load Balancers** → distribui o tráfego entre todas as instâncias do grupo.  
+
+---
+
+## 🔗 Fluxo simplificado
+
+```
+Cliente → Load Balancer → Auto Scaling Group → EC2 Instances
+```
+
 
