@@ -749,3 +749,96 @@ O **Amazon S3** é um serviço de armazenamento de objetos na nuvem, altamente e
 Usuário/Aplicação → Bucket S3 → Objetos (arquivos)
 ```
 
+# 🔁 S3 Replication: CRR e SRR
+
+## 📌 Visão geral
+O **Amazon S3 Replication** copia objetos automaticamente de um **bucket de origem** para um **bucket de destino** conforme regras de replicação.  
+Existem dois modos:
+- **CRR (Cross-Region Replication):** replica para **outra região** (ex.: `us-east-1` ➜ `sa-east-1`).
+- **SRR (Same-Region Replication):** replica **dentro da mesma região** (ex.: `us-east-1` ➜ `us-east-1`).
+
+> A replicação é **assíncrona** e, por padrão, aplica-se a **novos objetos** (ou a existentes via **S3 Batch Replication**).
+
+---
+
+## ✅ Requisitos
+- **Versionamento** **habilitado** no bucket **origem e destino**.
+- **Permissões IAM** para o S3 replicar em nome da conta/role.
+- (Opcional) **Criptografia KMS:** a role precisa de permissão para **usar a CMK** (origem e destino).
+
+---
+
+## 🧩 Quando usar cada um
+**CRR (entre regiões)**
+- **DR/BCP** (recuperação de desastre).
+- **Latência menor** para usuários de outra região.
+- **Compliance** que exige cópia geograficamente separada.
+
+**SRR (mesma região)**
+- **Separação de ambientes** (prod ➜ analytics).
+- **Contabilidade/auditoria** com cópia imutável (WORM/S3 Object Lock).
+- **Fluxos de dados** (ex.: origens diferentes centralizando em um bucket).
+
+---
+
+## 🔎 Como funciona (alto nível)
+1. Você cria **regras de replicação** por **prefixo** e/ou **tags**.
+2. O S3 detecta **novas gravações/versões** e replica para o destino.
+3. Itens excluídos podem replicar **delete markers** (conforme a regra).
+4. Metadados e ACLs/Ownership podem ser ajustados (ex.: **Change object ownership to destination**).
+
+---
+
+## ⚙️ Opções importantes na regra
+- **Filtro por prefixo** (ex.: `logs/`) e/ou **tags** (ex.: `env=prod`).
+- **RTC (Replication Time Control):** SLA de replicação (custo extra).
+- **Replica delete markers / replica delete** (controla propagação de exclusões).
+- **Replica metadados e objetos criptografados por KMS** (exige permissões KMS).
+- **Alterar proprietário no destino** (útil para replicar entre **contas**).
+
+---
+
+## 💰 Custos (resumo)
+- **Requests** de replicação + **dados transferidos** (no CRR há **data transfer inter-region**).
+- **Armazenamento** no destino.
+- **RTC** (se habilitado) cobra adicional.
+
+---
+
+## ⚠️ Limitações e pegadinhas
+- Replicação é **unidirecional** por regra.
+- Por padrão **não replica objetos antigos** — use **S3 Batch Replication** para retroagir.
+- **Server-side encryption (SSE-KMS)** requer permissões **kms:Encrypt/Decrypt/ReEncrypt** adequadas.
+- **Object Ownership/ACLs**: confira se o destino receberá a **propriedade** correta (evita “ownership issues”).
+- **Ciclos**: evite loop (origem ➜ destino ➜ origem); use filtros e **replication time**/ID para prevenir.
+
+---
+
+## 🧭 Passos (Console/alto nível)
+1. Habilite **Versioning** nos dois buckets.
+2. Em **Management → Replication**, crie uma **regra**:
+   - Escolha **SRR** ou **CRR** e o **bucket destino** (e conta, se diferente).
+   - Defina **prefix/tag filters**.
+   - (Opcional) Habilite **RTC**.
+   - Se usar **KMS**, selecione chaves e permita o uso pela role.
+3. Salve a regra e **valide** com upload de teste.
+4. (Opcional) Rode **S3 Batch Replication** para objetos pré-existentes.
+
+---
+
+## 🧪 Casos de uso comuns
+- **CRR:** Prod (US) ➜ DR (BR) com RTC para RTO/RPO agressivos.
+- **SRR:** Prod ➜ Data Lake (mesma região) para analytics com políticas distintas.
+- **Entre contas:** Origem (Conta A) ➜ Destino (Conta B) com **ownership** no destino.
+
+---
+
+## 🧷 Checklist rápido
+- [ ] Versioning ON em origem e destino  
+- [ ] Role de replicação com permissões S3 e (se preciso) KMS  
+- [ ] Filtro por **prefix/tags** definido  
+- [ ] Decisão sobre **delete markers** e **RTC**  
+- [ ] Teste de upload e verificação de **status de replicação** no objeto  
+- [ ] (Se necessário) **Batch Replication** para históricos
+
+---
