@@ -843,30 +843,77 @@ Existem dois modos:
 
 ---
 
-# Classes de Armazenamento no Amazon S3
+# 🗂️ Classes de Armazenamento do Amazon S3
 
-## 1. S3 Standard
-- Armazenamento padrão do S3.  
-- Indicado para **dados acessados frequentemente**.  
-- Alta durabilidade (99.999999999%).  
-- Disponibilidade de 99,99%.  
-- Uso típico: aplicações, sites, dados críticos.  
-
----
-
-## 2. S3 Standard-Infrequent Access (S3 Standard-IA)
-- Indicado para **dados acessados com pouca frequência**, mas que precisam estar disponíveis rapidamente.  
-- Menor custo de armazenamento que o **Standard**, mas cobra por recuperação de dados.  
-- Durabilidade igual ao Standard (99.999999999%).  
-- Disponibilidade de 99,9%.  
-- Uso típico: backups de longo prazo, dados de recuperação de desastres.  
+## S3 Standard
+- **Uso:** Dados acessados com frequência.  
+- **Tempo de recuperação:** Milissegundos.  
+- **Custo relativo:** Alto.  
+- **Exemplo:** Sites, APIs, conteúdo ativo.
 
 ---
 
-## 3. S3 One Zone-Infrequent Access (S3 One Zone-IA)
-- Semelhante ao **Standard-IA**, mas os dados ficam armazenados em **apenas uma zona de disponibilidade** (AZ).  
-- Mais barato que o Standard-IA.  
-- Durabilidade de 99.999999999%, mas sem replicação entre zonas.  
-- Disponibilidade de 99,5%.  
-- Uso típico: dados que podem ser facilmente recriados ou que não são críticos (exemplo: cópias secundárias, backups temporários).  
+## S3 Standard-IA (Infrequent Access)
+- **Uso:** Dados acessados raramente, mas que precisam de recuperação rápida.  
+- **Tempo de recuperação:** Milissegundos.  
+- **Custo relativo:** Moderado (menor que Standard; cobrança por recuperação).  
+- **Exemplo:** Backups e dados de DR acessados ocasionalmente.
+
+---
+
+## S3 One Zone-IA
+- **Uso:** Dados infrequentes armazenados em **uma única** Zona de Disponibilidade.  
+- **Tempo de recuperação:** Milissegundos.  
+- **Custo relativo:** Mais baixo que Standard-IA.  
+- **Exemplo:** Cópias secundárias ou dados que podem ser recriados.
+
+---
+
+## S3 Intelligent-Tiering
+- **Uso:** Dados com padrão de acesso imprevisível.  
+- **Tempo de recuperação:** Milissegundos (camadas de acesso automático).  
+- **Custo relativo:** Variável — otimizado automaticamente entre camadas.  
+- **Exemplo:** Coleções com acesso irregular que você não quer classificar manualmente.
+
+---
+
+## S3 Glacier Instant Retrieval
+- **Uso:** Arquivamento de longo prazo **com necessidade de acesso imediato** quando solicitado.  
+- **Tempo de recuperação:** Milissegundos (acesso instantâneo).  
+- **Custo relativo:** Baixo (mais barato que Standard-IA para armazenamento; custo de recuperação também baixo).  
+- **Exemplo:** Arquivos raramente acessados que, quando necessários, devem estar disponíveis imediatamente (ex.: ativos digitais grandes, certos catálogos).
+
+---
+
+## S3 Glacier Flexible Retrieval (antes Glacier)
+- **Uso:** Arquivamento de longo prazo com recuperação flexível.  
+- **Tempo de recuperação:** Minutos a horas (opções de prioridade).  
+- **Custo relativo:** Muito baixo para armazenamento; custo de recuperação varia conforme a opção.  
+- **Exemplo:** Arquivos de compliance ou arquivamento onde latência de minutos/hours é aceitável.
+
+---
+
+## S3 Glacier Deep Archive
+- **Uso:** Arquivamento de muito longo prazo (anos) para dados raramente acessados.  
+- **Tempo de recuperação:** Horas (pode chegar a 12+ horas dependendo da opção).  
+- **Custo relativo:** O mais baixo entre as classes S3.  
+- **Exemplo:** Retenção legal, arquivamento regulatório de longo prazo.
+
+---
+
+## Tabela resumo (comparativa rápida)
+
+| Classe                          | Uso principal                            | Recuperação         | Custo relativo |
+|---------------------------------|------------------------------------------|---------------------|----------------|
+| S3 Standard                     | Acesso frequente                         | Milissegundos       | Alto           |
+| S3 Standard-IA                  | Acesso infrequente, rápido               | Milissegundos       | Moderado       |
+| S3 One Zone-IA                  | Infrequente, 1 AZ                        | Milissegundos       | Baixo          |
+| S3 Intelligent-Tiering          | Padrão imprevisível (auto-tiering)       | Milissegundos       | Variável       |
+| **S3 Glacier Instant Retrieval**| Arquivamento com necessidade instantânea | Milissegundos       | Baixo          |
+| S3 Glacier Flexible Retrieval   | Arquivamento (recuperação flexível)     | Minutos → Horas     | Muito baixo    |
+| S3 Glacier Deep Archive         | Arquivamento extremo (anos)             | Horas               | Mínimo         |
+
+---
+
+**Observação:** custos reais dependem de: armazenamento, requests, transferência de dados e taxas de recuperação. Ao planejar, verifique o modelo de preços da AWS para cada classe.
 
