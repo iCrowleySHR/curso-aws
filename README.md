@@ -969,3 +969,6 @@ Ele é indicado quando a **transferência pela internet não é prática** devid
 - Útil quando transferir dados pela internet seria **lento ou caro**.  
 - Pode ser usado em conjunto com **AWS DataSync** para cargas menores ou contínuas.
 
+
+<img width="1069" height="464" alt="image" src="https://github.com/user-attachments/assets/9442844b-b835-4ec6-b28e-aa8f83ea05cb" />
+
