@@ -972,3 +972,55 @@ Ele é indicado quando a **transferência pela internet não é prática** devid
 
 <img width="1069" height="464" alt="image" src="https://github.com/user-attachments/assets/9442844b-b835-4ec6-b28e-aa8f83ea05cb" />
 
+# 🛡️ Amazon Storage Gateway
+
+## 📌 O que é o Amazon Storage Gateway?
+
+O **Amazon Storage Gateway** é um serviço que conecta **ambientes on-premises** (locais) à **nuvem AWS**, permitindo que empresas utilizem o **armazenamento na nuvem** como extensão de seus sistemas locais.  
+Ele combina **armazenamento local e em nuvem** para oferecer desempenho rápido com durabilidade e escalabilidade da AWS.
+
+---
+
+## 🔑 Principais características
+
+- **Integração híbrida:** conecta servidores locais à AWS.  
+- **Copia dados para S3, Glacier ou Glacier Deep Archive** automaticamente.  
+- **Baixa latência local:** mantém uma cópia local em cache para acesso rápido.  
+- **Segurança:** criptografia de dados em trânsito e em repouso.  
+- **Compatível com aplicações existentes:** funciona como **NAS (file), iSCSI (block)** ou **VTL (virtual tape)**.
+
+---
+
+## 🧩 Tipos de Storage Gateway
+
+1. **File Gateway**  
+   - Exposição via **NFS ou SMB**.  
+   - Armazena arquivos diretamente em **S3**.  
+   - Ideal para compartilhamento de arquivos e backup baseado em arquivos.
+
+2. **Volume Gateway**  
+   - Armazenamento em blocos via **iSCSI**.  
+   - Pode ser **Cached Volume** (dados principais na nuvem, cache local) ou **Stored Volume** (dados principais locais, backup na nuvem).  
+   - Ideal para backups e recuperação de desastres.
+
+3. **Tape Gateway**  
+   - Simula uma **biblioteca de fitas virtual (VTL)**.  
+   - Integra com softwares de backup existentes.  
+   - Armazena os backups em **S3 ou Glacier**.  
+
+---
+
+## ✅ Casos de uso
+
+- Extensão de armazenamento local para a nuvem.  
+- Backup e recuperação de desastres sem precisar migrar todo o data center.  
+- Arquivamento de dados históricos em S3 ou Glacier.  
+- Integração com sistemas legados que exigem armazenamento em bloco ou fita.  
+
+---
+
+## ⚠️ Observações
+
+- Requer **conectividade com a AWS**.  
+- Permite **reduzir custos de armazenamento on-premises** e aumentar durabilidade.  
+- Pode ser combinado com **AWS Snowball** para transferências iniciais de grandes volumes de dados.
