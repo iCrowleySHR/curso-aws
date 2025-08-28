@@ -842,3 +842,31 @@ Existem dois modos:
 - [ ] (Se necessário) **Batch Replication** para históricos
 
 ---
+
+# Classes de Armazenamento no Amazon S3
+
+## 1. S3 Standard
+- Armazenamento padrão do S3.  
+- Indicado para **dados acessados frequentemente**.  
+- Alta durabilidade (99.999999999%).  
+- Disponibilidade de 99,99%.  
+- Uso típico: aplicações, sites, dados críticos.  
+
+---
+
+## 2. S3 Standard-Infrequent Access (S3 Standard-IA)
+- Indicado para **dados acessados com pouca frequência**, mas que precisam estar disponíveis rapidamente.  
+- Menor custo de armazenamento que o **Standard**, mas cobra por recuperação de dados.  
+- Durabilidade igual ao Standard (99.999999999%).  
+- Disponibilidade de 99,9%.  
+- Uso típico: backups de longo prazo, dados de recuperação de desastres.  
+
+---
+
+## 3. S3 One Zone-Infrequent Access (S3 One Zone-IA)
+- Semelhante ao **Standard-IA**, mas os dados ficam armazenados em **apenas uma zona de disponibilidade** (AZ).  
+- Mais barato que o Standard-IA.  
+- Durabilidade de 99.999999999%, mas sem replicação entre zonas.  
+- Disponibilidade de 99,5%.  
+- Uso típico: dados que podem ser facilmente recriados ou que não são críticos (exemplo: cópias secundárias, backups temporários).  
+
