@@ -917,3 +917,55 @@ Existem dois modos:
 
 **Observação:** custos reais dependem de: armazenamento, requests, transferência de dados e taxas de recuperação. Ao planejar, verifique o modelo de preços da AWS para cada classe.
 
+# ❄️ AWS Snowball
+
+## 📌 O que é o AWS Snowball?
+
+O **AWS Snowball** é um serviço da AWS que permite **transferir grandes volumes de dados** entre sua infraestrutura local e a nuvem de forma rápida e segura, usando **dispositivos físicos transportáveis**.  
+Ele é indicado quando a **transferência pela internet não é prática** devido ao tamanho dos dados ou limitações de banda.
+
+---
+
+## 🔑 Principais características
+
+- **Dispositivo físico seguro** (criptografia AES 256-bit).  
+- **Capacidade**: de 50 TB a 80 TB por dispositivo (dependendo do modelo).  
+- **Alta durabilidade**: resistente a falhas físicas e ambientais.  
+- **Integração com AWS S3 e Glacier**: dados carregados no Snowball podem ser transferidos diretamente para buckets na nuvem.  
+- **Reduz tempo e custo** para transferências massivas de dados em comparação com internet pública.
+
+---
+
+## 🔧 Como funciona (alto nível)
+
+1. Solicita o dispositivo Snowball pelo **AWS Management Console**.  
+2. AWS envia o dispositivo físico para sua empresa.  
+3. Você conecta o dispositivo à sua rede local e copia os dados desejados.  
+4. Depois de copiar, o dispositivo é devolvido para a AWS.  
+5. AWS transfere os dados para o **S3, Glacier ou buckets configurados**.
+
+---
+
+## 🧩 Modelos disponíveis
+
+- **Snowball Edge Storage Optimized** → foco em transferência de dados e armazenamento em S3.  
+- **Snowball Edge Compute Optimized** → inclui capacidade de processamento com **EC2 e Lambda** embarcados.  
+- **Snowcone** → versão menor, portátil, até 8 TB, ideal para locais remotos ou IoT.  
+
+---
+
+## ✅ Casos de uso
+
+- Migração de **grandes volumes de dados** para AWS.  
+- Backup e arquivamento offline de **dados críticos**.  
+- Coleta de dados em locais remotos sem boa conectividade.  
+- Processamento de dados local com **computação embutida** (Snowball Edge Compute).  
+
+---
+
+## ⚠️ Observações
+
+- Dispositivos são **transportáveis**, mas a segurança física e criptografia garantem confidencialidade.  
+- Útil quando transferir dados pela internet seria **lento ou caro**.  
+- Pode ser usado em conjunto com **AWS DataSync** para cargas menores ou contínuas.
+
