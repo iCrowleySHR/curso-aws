@@ -701,4 +701,51 @@ Ele garante que sua aplicação esteja sempre disponível, ajustando os recursos
 Cliente → Load Balancer → Auto Scaling Group → EC2 Instances
 ```
 
+# ☁️ Amazon S3 (Simple Storage Service)
+
+## 📌 O que é o Amazon S3?
+
+O **Amazon S3** é um serviço de armazenamento de objetos na nuvem, altamente escalável e durável, usado para guardar **arquivos, backups, imagens, vídeos e dados de aplicações**.
+
+- Cada arquivo é chamado de **objeto**.  
+- Cada objeto é armazenado em um **bucket**, que funciona como uma pasta ou repositório.  
+- O S3 é acessível via **AWS Management Console, CLI, SDKs** ou APIs.
+
+---
+
+## 🔑 Características principais
+
+- **Durabilidade de 99,999999999%** dos dados (11 9’s).  
+- **Escalabilidade automática** → suporta qualquer quantidade de dados e acessos.  
+- **Controle de acesso** → via políticas, IAM e ACLs.  
+- **Versionamento** → mantém diferentes versões de um objeto.  
+- **Integração com outros serviços AWS** → Lambda, CloudFront, EC2, Athena, etc.  
+- **Suporte a criptografia** → SSE-S3, SSE-KMS, SSE-C.
+
+---
+
+## 🛠️ Exemplos de uso
+
+- Hospedagem de arquivos estáticos para sites (HTML, CSS, JS).  
+- Backup e arquivamento de dados.  
+- Armazenamento de logs e dados de aplicações.  
+- Integração com pipelines de dados (ETL, analytics).  
+- Distribuição de conteúdo com **CloudFront**.
+
+---
+
+## ✅ Benefícios
+
+- **Alta disponibilidade e durabilidade**.  
+- **Fácil gerenciamento e escalabilidade**.  
+- **Segurança e controle de acesso granulares**.  
+- **Custo eficiente** → paga apenas pelo que usa.  
+
+---
+
+## 🔗 Fluxo simplificado
+
+```
+Usuário/Aplicação → Bucket S3 → Objetos (arquivos)
+```
 
