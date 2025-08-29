@@ -1204,3 +1204,48 @@ Ele faz parte do **Amazon RDS**, mas foi desenvolvido pela AWS para **tirar o m�
 - Se você já usa MySQL/PostgreSQL, a migração é simples.  
 - Aurora é pensado para quem precisa de **escalabilidade sem dor de cabeça** e alta confiabilidade.  
 
+# 🌐 Amazon Aurora Serverless
+
+## 📌 O que é o Aurora Serverless?
+
+O **Aurora Serverless** é uma versão **sob demanda** do Amazon Aurora que **escala automaticamente a capacidade do banco de dados** conforme a carga da aplicação.  
+Você **não precisa escolher o tamanho da instância**: o banco cresce ou diminui sozinho, e você só paga pelos recursos que realmente usar.
+
+---
+
+## 🔑 Principais características
+
+- **Escalabilidade automática:** ajusta a capacidade de processamento e memória conforme a demanda.  
+- **Sob demanda:** paga apenas pelos segundos de uso (não precisa de instância fixa 24/7).  
+- **Alta disponibilidade:** integrado ao Aurora, com dados replicados em múltiplas zonas (Multi-AZ).  
+- **Compatibilidade:** funciona com MySQL e PostgreSQL.  
+- **Pause/Resume automático:** o banco pode "hibernar" quando não há uso, reduzindo custos.  
+
+---
+
+## ✅ Casos de uso
+
+- **Aplicações intermitentes ou imprevisíveis:** apps que têm períodos de uso intenso e depois ficam ociosos.  
+- **Ambientes de desenvolvimento e teste:** só consome recursos quando realmente usado.  
+- **Sistemas sazonais:** como e-commerce em época de promoções ou aplicações com picos em horários específicos.  
+
+---
+
+## ⚖️ Aurora Provisioned vs Aurora Serverless
+
+| Aspecto                  | Aurora Provisioned                     | Aurora Serverless                      |
+|---------------------------|----------------------------------------|----------------------------------------|
+| Capacidade                | Fixa (você escolhe o tamanho da instância) | Dinâmica (escala automaticamente)      |
+| Custos                    | Pago pela instância, mesmo ociosa       | Pago por uso em segundos               |
+| Performance               | Constante, previsível                  | Variável (depende do ajuste automático)|
+| Disponibilidade           | Alta (Multi-AZ, réplicas, failover)    | Alta (com failover automático)         |
+| Casos de uso              | Workloads contínuos e estáveis         | Workloads variáveis ou imprevisíveis   |
+
+---
+
+## ⚠️ Observações
+
+- **Latência no scale-up/down:** pode levar alguns segundos para ajustar a capacidade.  
+- Nem todos os recursos do Aurora estão disponíveis no **Serverless**.  
+- Ideal para workloads variáveis; para cargas sempre constantes, o **Aurora provisionado** pode sair mais barato.  
+
