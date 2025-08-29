@@ -1086,3 +1086,68 @@ Ele cuida de tarefas administrativas como **provisionamento, backup, patching, r
 - Cobrança baseada em **instância + armazenamento + I/O**.  
 - Para workloads mais críticos, usar **Multi-AZ** ou **Aurora** é recomendado.
 
+# 🤔 RDS vs Banco em EC2
+
+Quando você precisa de um banco de dados na AWS, existem duas opções principais:  
+1. **Gerenciar manualmente em uma instância EC2**.  
+2. **Usar um serviço gerenciado como o Amazon RDS**.  
+
+---
+
+## 🔧 Banco de dados em EC2 (autogerenciado)
+
+- Você instala e configura o banco de dados (MySQL, PostgreSQL, etc.) dentro de uma **instância EC2**.  
+- Você é responsável por **todas as tarefas administrativas**:  
+  - Patching e atualizações de versão.  
+  - Backups.  
+  - Alta disponibilidade e replicação.  
+  - Monitoramento.  
+  - Tuning de performance.  
+- Maior controle, mas também **maior complexidade e risco de erros**.  
+- Útil apenas quando você precisa de **customizações profundas** que o RDS não suporta.
+
+---
+
+## 🗄️ Banco de dados com Amazon RDS (gerenciado)
+
+- AWS gerencia quase todo o **trabalho operacional**.  
+- Benefícios:  
+  - **Backups automáticos**.  
+  - **Replicação Multi-AZ** e **Read Replicas** com poucos cliques.  
+  - **Patching automático** do banco.  
+  - Integração nativa com **IAM, CloudWatch, KMS**.  
+  - **Failover automático** em caso de falha.  
+- Permite escalar verticalmente (mais CPU/RAM) ou horizontalmente (réplicas de leitura).  
+- Você foca no **uso do banco e nos dados**, não na infraestrutura.
+
+---
+
+## ⚖️ Comparação
+
+| Aspecto                  | Banco em EC2 (autogerenciado)            | Amazon RDS (gerenciado)                  |
+|---------------------------|------------------------------------------|------------------------------------------|
+| Instalação e setup        | Manual (você cuida de tudo)             | Automática (poucos cliques)              |
+| Patching/updates          | Você gerencia                           | AWS gerencia                             |
+| Backups                   | Você implementa                         | Automáticos e configuráveis              |
+| Alta disponibilidade      | Você configura (replicação/manual)      | Multi-AZ integrado + failover automático |
+| Segurança                 | Você configura tudo                     | Criptografia, IAM e segurança integrados |
+| Escalabilidade            | Complexa, exige scripts/configuração     | Simples (troca de tamanho, read replicas)|
+| Custo de tempo operacional| Alto                                    | Baixo                                    |
+| Flexibilidade             | Máxima (customizações no SO e DB)       | Limitada (restrições do serviço)         |
+
+---
+
+## ✅ Por que usar RDS em vez de EC2?
+
+- Reduz **carga operacional** (você não perde tempo com patch, backup, replicação).  
+- Menor risco de erro humano em tarefas administrativas.  
+- Melhor **resiliência e disponibilidade** (Multi-AZ, failover automático).  
+- Escalabilidade muito mais fácil.  
+- Integração nativa com o ecossistema AWS.  
+
+👉 Use **EC2 com banco autogerenciado** somente quando:  
+- Precisa de **customizações no SO ou no banco** que o RDS não suporta.  
+- Precisa de um **sistema legado** que não roda em RDS.  
+- Tem requisitos específicos de configuração avançada.
+
+Na maioria dos casos, **Amazon RDS é a escolha ideal**: menos esforço, mais segurança, mais confiabilidade.
