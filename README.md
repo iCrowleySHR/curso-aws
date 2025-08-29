@@ -1297,3 +1297,43 @@ Ele é usado para melhorar a **performance e escalabilidade** de aplicações, a
 - Ideal para workloads onde a **latência é crítica**.  
 - Escolha **Redis** quando precisar de **mais funcionalidades e resiliência**; use **Memcached** se precisar apenas de cache básico e distribuído.  
 
+# ⚡ Amazon DynamoDB
+
+## 📌 O que é o DynamoDB?
+
+O **Amazon DynamoDB** é um **banco de dados NoSQL totalmente gerenciado**, com alta performance e baixa latência.  
+Ele é **serverless**, escalável automaticamente e ideal para aplicações que precisam lidar com **grande volume de dados** e acessos imprevisíveis.
+
+---
+
+## 🔑 Principais características
+
+- **Modelo NoSQL:** baseado em **tabelas, itens e atributos** (não relacional).  
+- **Escalabilidade automática:** ajusta throughput conforme a demanda sem downtime.  
+- **Performance previsível:** latência em **milissegundos de um dígito**, mesmo com alto volume.  
+- **Serverless:** não é necessário provisionar instâncias.  
+- **Alta disponibilidade e durabilidade:** replicado automaticamente em **3 AZs**.  
+- **Segurança:** integração com **IAM, KMS e VPC**, criptografia de dados em repouso e trânsito.  
+- **Streams:** permite capturar alterações nos dados para **eventos ou replicação**.
+
+---
+
+## ✅ Casos de uso
+
+- **Aplicações web e móveis de grande escala** (ex.: apps de rede social, e-commerce).  
+- **Sistemas que exigem leitura/escrita rápida e imprevisível**.  
+- **Gaming:** rankings, contadores, inventário de jogadores.  
+- **IoT:** armazenamento de grandes volumes de dados de dispositivos.  
+- **Aplicações serverless** com Lambda para processar eventos do DynamoDB Streams.
+
+---
+
+## ⚖️ DynamoDB vs RDS / Aurora
+
+| Aspecto                  | RDS / Aurora                           | DynamoDB                       |
+|---------------------------|----------------------------------------|--------------------------------|
+| Modelo de dados           | Relacional                              | NoSQL (chave-valor / documento)|
+| Escalabilidade            | Vertical ou Read Replicas               | Horizontal automática (serverless)|
+| Latência                  | Milissegundos a dezenas de ms           | Milissegundos de 1 dígito     |
+| Consistência              | Forte (ACID)                            | Configurável: eventual ou forte|
+| Serverless                | Não (instâncias provisionadas)
