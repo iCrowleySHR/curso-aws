@@ -1024,3 +1024,65 @@ Ele combina **armazenamento local e em nuvem** para oferecer desempenho rápido 
 - Requer **conectividade com a AWS**.  
 - Permite **reduzir custos de armazenamento on-premises** e aumentar durabilidade.  
 - Pode ser combinado com **AWS Snowball** para transferências iniciais de grandes volumes de dados.
+
+# 🗄️ Amazon RDS (Relational Database Service)
+
+## 📌 O que é o Amazon RDS?
+
+O **Amazon Relational Database Service (RDS)** é um serviço gerenciado da AWS que facilita a **criação, operação e escalabilidade** de bancos de dados relacionais na nuvem.  
+Ele cuida de tarefas administrativas como **provisionamento, backup, patching, replicação e monitoramento**, permitindo que você foque apenas no uso do banco.
+
+---
+
+## 🔑 Principais características
+
+- **Bancos suportados:**  
+  - Amazon Aurora  
+  - MySQL  
+  - MariaDB  
+  - PostgreSQL  
+  - Oracle  
+  - Microsoft SQL Server  
+
+- **Alta disponibilidade:**  
+  - Opção de **Multi-AZ** (replicação automática entre zonas).  
+  - Failover automático em caso de falha.
+
+- **Escalabilidade:**  
+  - Ajuste de **CPU, memória e armazenamento** sob demanda.  
+  - Suporte a **Read Replicas** para leitura escalável.
+
+- **Segurança:**  
+  - Criptografia em repouso (KMS) e em trânsito (SSL/TLS).  
+  - Integração com **IAM** para controle de acesso.  
+
+- **Backups automáticos:**  
+  - Snapshots manuais e automáticos.  
+  - Recuperação point-in-time.  
+
+---
+
+## ✅ Casos de uso
+
+- Aplicações **web e móveis** que precisam de banco relacional.  
+- Sistemas de ERP, CRM e aplicações corporativas.  
+- Análises que requerem dados transacionais consistentes.  
+- Substituição de bancos locais por uma solução **gerenciada e escalável**.  
+
+---
+
+## 🧩 Benefícios principais
+
+- Menor esforço operacional (AWS gerencia updates, patches, backups).  
+- Confiabilidade com **99,95% de SLA**.  
+- Fácil integração com outros serviços da AWS (EC2, Lambda, Elastic Beanstalk).  
+- Redução de custos com administração de banco.  
+
+---
+
+## ⚠️ Observações
+
+- Apesar de gerenciado, você **não tem acesso root ao sistema operacional** subjacente.  
+- Cobrança baseada em **instância + armazenamento + I/O**.  
+- Para workloads mais críticos, usar **Multi-AZ** ou **Aurora** é recomendado.
+
