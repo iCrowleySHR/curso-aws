@@ -1249,3 +1249,51 @@ Você **não precisa escolher o tamanho da instância**: o banco cresce ou dimin
 - Nem todos os recursos do Aurora estão disponíveis no **Serverless**.  
 - Ideal para workloads variáveis; para cargas sempre constantes, o **Aurora provisionado** pode sair mais barato.  
 
+# ⚡ Amazon ElastiCache
+
+## 📌 O que é o Amazon ElastiCache?
+
+O **Amazon ElastiCache** é um serviço de **cache em memória totalmente gerenciado** da AWS, compatível com os mecanismos **Redis** e **Memcached**.  
+Ele é usado para melhorar a **performance e escalabilidade** de aplicações, armazenando dados frequentemente acessados na memória, o que é muito mais rápido do que buscar em um banco de dados tradicional.
+
+---
+
+## 🔑 Principais características
+
+- **Alto desempenho:** baixa latência, resposta em microssegundos.  
+- **Compatibilidade:** suporta **Redis** (mais avançado, com persistência e replicação) e **Memcached** (mais simples e distribuído).  
+- **Gerenciado pela AWS:** sem necessidade de administrar servidores manualmente.  
+- **Escalabilidade:** fácil de aumentar ou reduzir clusters conforme a demanda.  
+- **Alta disponibilidade:** suporte a **Multi-AZ** com failover automático.  
+- **Segurança:** integração com **IAM, VPC, KMS e TLS**.  
+
+---
+
+## ✅ Casos de uso
+
+- **Cache de consultas de banco de dados:** reduz a carga em bancos relacionais como RDS ou Aurora.  
+- **Armazenamento de sessões de usuários:** muito usado em aplicações web escaláveis.  
+- **Ranking em tempo real e contadores:** jogos online, analytics e e-commerce.  
+- **Filas, Pub/Sub e mensagens em tempo real** (no caso do Redis).  
+- **Caching de páginas e conteúdo dinâmico** para reduzir latência em aplicações.  
+
+---
+
+## ⚖️ Redis vs Memcached
+
+| Aspecto            | Redis                                     | Memcached                         |
+|---------------------|-------------------------------------------|-----------------------------------|
+| Persistência        | Suporta persistência em disco             | Não suporta (somente em memória)  |
+| Estruturas de dados | Avançadas (listas, sets, hashes, streams) | Apenas chave/valor simples        |
+| Replicação          | Suporta replicação e failover automático  | Não tem replicação nativa         |
+| Escalabilidade      | Boa, mas mais complexa                    | Muito simples e horizontal        |
+| Casos de uso        | Sessões, filas, contadores, cache robusto | Cache simples e distribuído       |
+
+---
+
+## ⚠️ Observações
+
+- Não substitui um banco de dados relacional ou NoSQL — é um **complemento** para performance.  
+- Ideal para workloads onde a **latência é crítica**.  
+- Escolha **Redis** quando precisar de **mais funcionalidades e resiliência**; use **Memcached** se precisar apenas de cache básico e distribuído.  
+
