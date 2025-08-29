@@ -1151,3 +1151,56 @@ Quando você precisa de um banco de dados na AWS, existem duas opções principa
 - Tem requisitos específicos de configuração avançada.
 
 Na maioria dos casos, **Amazon RDS é a escolha ideal**: menos esforço, mais segurança, mais confiabilidade.
+
+# ⚡ Amazon Aurora
+
+## 📌 O que é o Amazon Aurora?
+
+O **Amazon Aurora** é um banco de dados relacional compatível com **MySQL** e **PostgreSQL**, totalmente gerenciado pela AWS, projetado para ser **mais rápido, mais escalável e mais resiliente** do que bancos tradicionais.  
+Ele faz parte do **Amazon RDS**, mas foi desenvolvido pela AWS para **tirar o máximo proveito da nuvem**.
+
+---
+
+## 🔑 Principais características
+
+- **Compatibilidade:** funciona com aplicações MySQL e PostgreSQL já existentes.  
+- **Performance:** até **5x mais rápido que MySQL** e **3x mais rápido que PostgreSQL** em hardware equivalente.  
+- **Escalabilidade automática:** cresce de 10 GB até **128 TB por banco** sem precisar de intervenção.  
+- **Alta disponibilidade:**  
+  - Armazena **6 cópias de dados em 3 AZs diferentes**.  
+  - Failover automático em segundos.  
+- **Replicação:** até 15 réplicas de leitura com baixa latência.  
+- **Integração com outros serviços AWS:** IAM, KMS, CloudWatch, Lambda, etc.  
+- **Segurança:** criptografia em trânsito (SSL/TLS) e em repouso (KMS).  
+
+---
+
+## ✅ Casos de uso
+
+- Aplicações **mission-critical** que precisam de **alta disponibilidade** e **resiliência**.  
+- Sistemas financeiros, e-commerce e apps com **grande volume de transações**.  
+- Ambientes onde é necessário **crescimento automático do banco** sem downtime.  
+- Substituição de bancos MySQL/PostgreSQL locais com ganho de performance.  
+
+---
+
+## ⚖️ Comparação rápida: Aurora vs RDS
+
+| Aspecto                   | Amazon RDS (MySQL/Postgres)            | Amazon Aurora                          |
+|----------------------------|----------------------------------------|----------------------------------------|
+| Performance                | Boa (gerenciada pela AWS)              | Excelente (3x–5x mais rápido)          |
+| Escalabilidade             | Manual (alterar instância ou storage)  | Automática até 128 TB                  |
+| Replicação                 | Algumas réplicas (menos eficientes)    | Até 15 réplicas com baixa latência     |
+| Alta disponibilidade       | Multi-AZ com failover                  | 6 cópias de dados em 3 AZs             |
+| Tempo de failover          | Minutos                                | Segundos                               |
+| Custo                      | Mais barato                            | Mais caro (compensa pela performance)  |
+| Compatibilidade            | Engines variados (MySQL, MariaDB etc.) | Apenas MySQL e PostgreSQL              |
+
+---
+
+## ⚠️ Observações
+
+- O custo do Aurora é **maior que RDS "puro"**, mas pode sair mais barato se considerar a **eficiência/performance**.  
+- Se você já usa MySQL/PostgreSQL, a migração é simples.  
+- Aurora é pensado para quem precisa de **escalabilidade sem dor de cabeça** e alta confiabilidade.  
+
