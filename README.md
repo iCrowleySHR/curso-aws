@@ -1823,3 +1823,52 @@ Você só precisa definir CPU, memória e container, e a AWS gerencia o resto.
 - Use **Fargate** quando quiser simplicidade e não quiser gerenciar servidores.  
 - Use **ECS + EC2** quando precisar de maior controle sobre a infraestrutura ou customização de instâncias.  
 
+# ☸️ Amazon EKS
+
+## 📌 O que é o Amazon EKS?
+
+O **Amazon EKS (Elastic Kubernetes Service)** é um **serviço gerenciado de Kubernetes** na AWS.  
+Ele permite executar aplicações **containerizadas** com toda a orquestração, escalabilidade e gerenciamento nativos do **Kubernetes**, sem precisar instalar ou operar o plano de controle manualmente.
+
+---
+
+## 🔑 Principais características
+
+- **Kubernetes gerenciado:** AWS provisiona e gerencia os **control planes** (master nodes).  
+- **Execução de containers:** suporta Docker e outros runtimes compatíveis com Kubernetes.  
+- **Escalabilidade automática:** integra com **Cluster Autoscaler** e HPA (Horizontal Pod Autoscaler).  
+- **Segurança:** integração com **IAM, VPC, Security Groups, RBAC** e criptografia de dados.  
+- **Integração com AWS:** funciona com **ECR, Fargate, CloudWatch, CloudTrail** e outros serviços.  
+- **Alta disponibilidade:** múltiplas zonas de disponibilidade para os nós do cluster.  
+- **Suporte híbrido:** conecta clusters on-premises com **EKS Anywhere**.  
+
+---
+
+## ✅ Casos de uso
+
+- Deploy de **microservices complexos** com Kubernetes.  
+- **Workloads em containers** que precisam de escalabilidade automática.  
+- Aplicações que **já usam Kubernetes** e querem migrar para AWS sem refazer infraestrutura.  
+- Integração com **CI/CD** usando CodePipeline, CodeBuild ou Jenkins.  
+- Orquestração de **batch jobs ou pipelines de ML** em containers.  
+
+---
+
+## ⚖️ Comparação EKS vs ECS + Fargate
+
+| Aspecto                  | Amazon EKS                          | ECS + Fargate                          |
+|---------------------------|-------------------------------------|----------------------------------------|
+| Orquestração             | Kubernetes (padrão open-source)     | ECS (AWS native)                        |
+| Gerenciamento do plano   | AWS gerencia o control plane        | N/A                                     |
+| Flexibilidade            | Total, padrão Kubernetes            | Limitada a funcionalidades ECS         |
+| Complexidade             | Média-alta, curva de aprendizado    | Baixa, mais simples de usar             |
+| Escalabilidade            | Automática via HPA/Cluster Autoscaler | Automática por contêineres Fargate    |
+| Casos de uso              | Microservices complexos, multi-cloud | Microservices simples, serverless      |
+
+---
+
+## ⚠️ Observações
+
+- Use **EKS** quando precisar de **compatibilidade total com Kubernetes** ou multi-cloud.  
+- Use **ECS + Fargate** quando quiser **simplicidade**, sem gerenciar clusters complexos.  
+- EKS pode ser integrado com **Fargate**, permitindo rodar pods sem se preocupar com instâncias EC2.  
