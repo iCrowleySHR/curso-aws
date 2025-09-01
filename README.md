@@ -1337,3 +1337,54 @@ Ele é **serverless**, escalável automaticamente e ideal para aplicações que 
 | Latência                  | Milissegundos a dezenas de ms           | Milissegundos de 1 dígito     |
 | Consistência              | Forte (ACID)                            | Configurável: eventual ou forte|
 | Serverless                | Não (instâncias provisionadas)
+
+# 📊 Amazon Redshift
+
+## 📌 O que é o Amazon Redshift?
+
+O **Amazon Redshift** é um serviço de **data warehouse totalmente gerenciado** pela AWS.  
+Ele é otimizado para **consultas analíticas em grandes volumes de dados** (em petabytes), permitindo que empresas façam **Business Intelligence (BI)**, relatórios e análises complexas com alta performance.
+
+---
+
+## 🔑 Principais características
+
+- **Armazenamento em colunas (columnar):** otimizado para consultas analíticas, não para transações.  
+- **Processamento massivamente paralelo (MPP):** distribui a execução de queries entre vários nós.  
+- **Integração nativa com BI e ML:** suporta Amazon QuickSight, Tableau, Power BI, SageMaker.  
+- **Escalabilidade:** pode crescer para **petabytes de dados**.  
+- **Backup e snapshots automáticos** para o Amazon S3.  
+- **Segurança:** criptografia em trânsito e repouso (KMS, HSM), VPC e integração com IAM.  
+- **Redshift Spectrum:** permite consultar dados diretamente no **Amazon S3** sem precisar carregar no Redshift.  
+
+---
+
+## ✅ Casos de uso
+
+- **Business Intelligence (BI)** e relatórios corporativos.  
+- **Análises em tempo quase real** de grandes volumes de dados.  
+- **Integração de múltiplas fontes de dados** (bancos, logs, IoT, apps).  
+- **Data Lakes:** análise de dados armazenados no **Amazon S3**.  
+
+---
+
+## ⚖️ Comparação Redshift vs RDS / DynamoDB
+
+| Aspecto                  | RDS / Aurora                           | DynamoDB                           | Redshift                           |
+|---------------------------|----------------------------------------|------------------------------------|------------------------------------|
+| Modelo de dados           | Relacional (OLTP)                      | NoSQL (chave-valor/documento)       | Data Warehouse (OLAP)               |
+| Otimização                | Transações (muitas escritas/leitura leve)| Leitura/escrita ultrarrápida e escala| Consultas analíticas complexas      |
+| Volume de dados           | De GB a alguns TBs                     | Escala massiva horizontal           | Até petabytes                       |
+| Latência                  | Baixa, para apps transacionais         | Milissegundos                       | Segundos a minutos (para queries)   |
+| Escalabilidade            | Vertical + réplicas                    | Serverless, horizontal automática   | Clusters elásticos                  |
+| Casos de uso              | ERP, e-commerce, sistemas transacionais| Apps web/mobile, IoT, gaming        | BI, relatórios, big data analytics  |
+
+---
+
+## ⚠️ Observações
+
+- **Redshift não é para transações** (inserções rápidas e frequentes). Ele é feito para **consultas analíticas pesadas**.  
+- Trabalha muito bem junto com **S3 (Data Lake)** e **Glue (ETL)**.  
+- Se o objetivo é **processamento transacional (OLTP)** → use **RDS/Aurora/DynamoDB**.  
+- Se o objetivo é **análise e relatórios (OLAP)** → use **Redshift**.  
+
