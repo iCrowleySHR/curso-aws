@@ -1629,3 +1629,34 @@ Ele foi projetado para lidar com **dados que variam ao longo do tempo** (como m�
 - **Análises em tempo real:** dashboards de performance e alertas automáticos.  
 
 ---
+
+# 🔗 Amazon Managed Blockchain
+
+## 📌 O que é o Amazon Managed Blockchain?
+
+O **Amazon Managed Blockchain** é um serviço **totalmente gerenciado da AWS** que permite **criar e gerenciar redes de blockchain escaláveis** usando frameworks populares como **Hyperledger Fabric** e **Ethereum** (em versões anteriores).  
+
+Ele elimina a complexidade de configurar manualmente infraestrutura de blockchain, permitindo que empresas construam **aplicações descentralizadas (dApps)**, **redes privadas entre parceiros** e sistemas de **transações imutáveis**.
+
+---
+
+## 🔑 Principais características
+
+- **Suporte a frameworks de blockchain:** Hyperledger Fabric (Ethereum já foi suportado, mas não está mais disponível em versões recentes).  
+- **Gerenciamento automatizado:** provisionamento de nós, atualização de software, monitoramento e escalabilidade.  
+- **Alta disponibilidade:** infraestrutura tolerante a falhas em múltiplas zonas da AWS.  
+- **Integração com AWS:** IAM para controle de acesso, CloudWatch para monitoramento, S3 para armazenar dados off-chain.  
+- **Segurança:** identidade de participantes gerenciada, criptografia em repouso e em trânsito.  
+- **Escalabilidade:** fácil adição ou remoção de membros e nós validadores.  
+
+---
+
+## ✅ Casos de uso
+
+- **Supply Chain:** rastreamento de produtos e insumos de ponta a ponta.  
+- **Serviços financeiros:** liquidação de transações, auditoria e compliance.  
+- **Governança corporativa:** votação eletrônica segura e transparente.  
+- **Saúde:** compartilhamento seguro de registros médicos entre organizações.  
+- **Identidade digital:** sistemas de autenticação descentralizados.  
+
+---
