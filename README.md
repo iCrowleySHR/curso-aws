@@ -1388,3 +1388,51 @@ Ele é otimizado para **consultas analíticas em grandes volumes de dados** (em 
 - Se o objetivo é **processamento transacional (OLTP)** → use **RDS/Aurora/DynamoDB**.  
 - Se o objetivo é **análise e relatórios (OLAP)** → use **Redshift**.  
 
+# 🔥 Amazon EMR (Elastic MapReduce)
+
+## 📌 O que é o Amazon EMR?
+
+O **Amazon EMR (Elastic MapReduce)** é um serviço gerenciado da AWS para **processamento de grandes volumes de dados** usando frameworks como **Apache Hadoop, Spark, Hive, HBase, Flink e Presto**.  
+Ele permite analisar, transformar e processar dados em **clusters escaláveis** de forma rápida e com custo reduzido.
+
+---
+
+## 🔑 Principais características
+
+- **Big Data como serviço:** executa workloads de análise em escala massiva.  
+- **Frameworks suportados:** Hadoop, Spark, Hive, HBase, Presto, Flink, entre outros.  
+- **Integração com S3:** pode usar o **Amazon S3 como data lake**.  
+- **Escalabilidade elástica:** ajusta automaticamente o número de nós do cluster.  
+- **Custo otimizado:** pode usar **Spot Instances** para reduzir custos.  
+- **Segurança:** integração com **IAM, KMS, VPC, Kerberos** e criptografia.  
+- **Gerenciamento facilitado:** a AWS provisiona, configura e gerencia os clusters.  
+
+---
+
+## ✅ Casos de uso
+
+- **Processamento de grandes volumes de dados (Big Data).**  
+- **ETL (Extract, Transform, Load):** preparação de dados para análise.  
+- **Machine Learning:** treinar modelos com Spark MLlib ou TensorFlow em escala.  
+- **Data Warehousing:** análises em conjunto com **Amazon Redshift**.  
+- **Data Lakes:** processamento direto em dados armazenados no S3.  
+
+---
+
+## ⚖️ Comparação EMR vs Redshift vs Glue
+
+| Aspecto                  | EMR                                   | Redshift                              | Glue                             |
+|---------------------------|---------------------------------------|---------------------------------------|----------------------------------|
+| Tipo de serviço           | Big Data (Hadoop, Spark, etc.)        | Data Warehouse (OLAP)                 | ETL (serverless)                 |
+| Modelo de dados           | Flexível (estruturado e não estruturado)| Estruturado/semiestruturado (SQL)     | Dados em S3, Catálogo de dados   |
+| Escalabilidade            | Cluster escalável elástico            | Clusters de Data Warehouse            | Totalmente serverless            |
+| Casos de uso              | Processamento massivo, ML, ETL        | BI, relatórios, análise de dados       | ETL, preparação e catalogação    |
+| Custos                    | Paga pelos clusters (EC2 + storage)   | Paga pelos nós/armazenamento          | Paga por execução (sob demanda)  |
+
+---
+
+## ⚠️ Observações
+
+- O **EMR é ideal para workloads complexos de Big Data**, mas exige mais configuração do que Redshift ou Glue.  
+- Normalmente, é usado em conjunto com **S3 (Data Lake)** e **Athena/Redshift** para análises.  
+- Permite controle detalhado sobre o cluster, o que dá flexibilidade, mas também responsabilidade maior de configuração.  
