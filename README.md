@@ -1435,4 +1435,53 @@ Ele permite analisar, transformar e processar dados em **clusters escaláveis** 
 
 - O **EMR é ideal para workloads complexos de Big Data**, mas exige mais configuração do que Redshift ou Glue.  
 - Normalmente, é usado em conjunto com **S3 (Data Lake)** e **Athena/Redshift** para análises.  
-- Permite controle detalhado sobre o cluster, o que dá flexibilidade, mas também responsabilidade maior de configuração.  
+- Permite controle detalhado sobre o cluster, o que dá flexibilidade, mas também responsabilidade maior de configuração.
+
+# 🔎 Amazon Athena
+
+## 📌 O que é o Amazon Athena?
+
+O **Amazon Athena** é um serviço **serverless de consulta interativa** que permite executar **queries SQL diretamente em dados armazenados no Amazon S3**.  
+Não é necessário provisionar servidores ou clusters: você paga apenas pelas consultas realizadas.
+
+---
+
+## 🔑 Principais características
+
+- **Serverless:** sem necessidade de gerenciar infraestrutura.  
+- **Consulta em S3:** acessa dados diretamente em buckets do Amazon S3.  
+- **Compatibilidade:** suporta **ANSI SQL** e integra com **AWS Glue Data Catalog**.  
+- **Formatos de dados:** funciona com **CSV, JSON, Parquet, ORC, Avro**, entre outros.  
+- **Integrações:** com Amazon QuickSight, Redshift, Glue e outros serviços de análise.  
+- **Custo otimizado:** você paga somente pelos dados lidos pela query.  
+
+---
+
+## ✅ Casos de uso
+
+- **Exploração e análise de dados em data lakes (S3).**  
+- **Ad-hoc queries:** consultas rápidas em grandes volumes de dados.  
+- **Auditoria e logs:** análise de CloudTrail, ELB, VPC Flow Logs, etc.  
+- **ETL simplificado:** transformar dados sem precisar rodar clusters (com integração Glue).  
+- **Integração BI:** conectar com ferramentas como **Amazon QuickSight, Tableau e Power BI**.  
+
+---
+
+## ⚖️ Comparação Athena vs Redshift vs EMR
+
+| Aspecto                  | Athena                                | Redshift                              | EMR                                      |
+|---------------------------|---------------------------------------|---------------------------------------|------------------------------------------|
+| Tipo de serviço           | Consulta SQL serverless em S3         | Data Warehouse (OLAP)                 | Big Data (Hadoop, Spark, Hive, etc.)      |
+| Infraestrutura            | Nenhuma (serverless)                  | Cluster provisionado pela AWS         | Clusters gerenciados pelo usuário         |
+| Casos de uso              | Consultas rápidas em data lakes       | BI, relatórios complexos, alta escala | Processamento massivo, ETL, ML, pipelines |
+| Custos                    | Pago por query (dados lidos em S3)    | Pago por nó/armazenamento             | Pago por cluster EC2 + tempo de execução  |
+
+---
+
+## ⚠️ Observações
+
+- **Ideal para consultas rápidas** em grandes datasets sem precisar de cluster.  
+- Se o workload é **análise repetitiva em petabytes de dados estruturados**, Redshift pode ser mais eficiente.  
+- Para **ETL complexo ou machine learning**, o EMR é mais adequado.  
+- Athena brilha em arquiteturas de **Data Lake** junto com **S3 e Glue**.  
+
