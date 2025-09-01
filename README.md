@@ -1872,3 +1872,52 @@ Ele permite executar aplicações **containerizadas** com toda a orquestração,
 - Use **EKS** quando precisar de **compatibilidade total com Kubernetes** ou multi-cloud.  
 - Use **ECS + Fargate** quando quiser **simplicidade**, sem gerenciar clusters complexos.  
 - EKS pode ser integrado com **Fargate**, permitindo rodar pods sem se preocupar com instâncias EC2.  
+
+# 🌐 Amazon API Gateway
+
+## 📌 O que é o Amazon API Gateway?
+
+O **Amazon API Gateway** é um serviço totalmente gerenciado da AWS que permite **criar, publicar, manter, monitorar e proteger APIs** RESTful e WebSocket em qualquer escala.  
+Ele funciona como a **porta de entrada para aplicações e microservices**, conectando clientes a serviços back-end, sejam eles **Lambda, EC2, ECS, Fargate, EKS ou outros**.
+
+---
+
+## 🔑 Principais características
+
+- **Gerenciamento de APIs:** criação, versionamento e deploy de APIs REST e WebSocket.  
+- **Escalabilidade automática:** suporta milhões de chamadas simultâneas sem necessidade de gerenciar servidores.  
+- **Integração nativa:** conecta facilmente com **AWS Lambda, ECS, Fargate, EKS, DynamoDB e outros serviços**.  
+- **Segurança:** suporte a **IAM, Cognito, API keys, JWT, throttling e WAF**.  
+- **Monitoramento e logging:** integração com **CloudWatch** para métricas e logs detalhados.  
+- **Transformação de requests/responses:** manipulação de payloads sem alterar o back-end.  
+- **Caching:** suporte a cache de respostas para melhorar performance e reduzir custos.  
+
+---
+
+## ✅ Casos de uso
+
+- **Microservices:** expor endpoints de serviços back-end em arquiteturas serverless.  
+- **APIs públicas ou privadas:** fornecer dados e funcionalidades para clientes, parceiros ou aplicações internas.  
+- **Backends sem servidor:** integração com **AWS Lambda** para execução de código on-demand.  
+- **Gateway para aplicações móveis ou web:** unificação de chamadas e controle de tráfego.  
+- **Monitoramento e controle de acesso:** aplicar quotas, throttling e autenticação.  
+
+---
+
+## ⚖️ Comparação API Gateway vs Load Balancer vs App Runner
+
+| Aspecto                  | API Gateway                        | Load Balancer (ALB/NLB)              | App Runner                           |
+|---------------------------|-----------------------------------|-------------------------------------|--------------------------------------|
+| Foco                      | Gerenciar APIs REST/WebSocket      | Distribuição de tráfego HTTP/TCP     | Deploy de apps e serviços web        |
+| Escalabilidade            | Automática, serverless             | Automática, baseada em instâncias    | Automática, serverless               |
+| Integração com back-end   | Lambda, ECS, Fargate, EKS, HTTP   | EC2, ECS, Fargate                    | Código ou contêiner                   |
+| Segurança                 | IAM, Cognito, JWT, throttling      | Security Groups, WAF                 | IAM + TLS                             |
+| Casos de uso              | APIs públicas ou internas          | Distribuição de tráfego e HA         | Deploy rápido de apps web/container  |
+
+---
+
+## ⚠️ Observações
+
+- **API Gateway** é ideal para arquiteturas **serverless** e **microservices**.  
+- Para simplesmente distribuir tráfego HTTP entre instâncias EC2, um **Load Balancer** pode ser suficiente.  
+- Combine **API Gateway + Lambda** para criar backends totalmente serverless, escaláveis e seguros.  
