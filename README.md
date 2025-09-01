@@ -1660,3 +1660,35 @@ Ele elimina a complexidade de configurar manualmente infraestrutura de blockchai
 - **Identidade digital:** sistemas de autenticação descentralizados.  
 
 ---
+
+# 🧩 AWS Glue
+
+## 📌 O que é o AWS Glue?
+
+O **AWS Glue** é um serviço **serverless de ETL (Extract, Transform, Load)** totalmente gerenciado, usado para **preparar e transformar dados** para análise.  
+Ele facilita a integração de dados de múltiplas fontes e sua disponibilização em **data lakes, data warehouses e sistemas de análise**.  
+
+---
+
+## 🔑 Principais características
+
+- **Serverless:** não há necessidade de gerenciar servidores ou clusters.  
+- **ETL simplificado:** cria, transforma e carrega dados automaticamente.  
+- **Glue Data Catalog:** catálogo centralizado para metadados de todos os dados armazenados na AWS.  
+- **Integração nativa:** funciona diretamente com **S3, Redshift, RDS, DynamoDB, Athena, Lake Formation** e outros.  
+- **Transformações de dados:** suporta **PySpark**, **Scala** e **Python** para processar grandes volumes de dados.  
+- **Glue Studio:** interface visual para criar pipelines ETL sem precisar de muito código.  
+- **Glue DataBrew:** interface para preparação de dados sem código (no-code).  
+- **Glue Crawlers:** detecta automaticamente esquemas e popula o Data Catalog.  
+
+---
+
+## ✅ Casos de uso
+
+- **Data Lakes:** organizar dados no **Amazon S3** em formato otimizado (Parquet, ORC, Avro).  
+- **Integração de dados:** unificação de dados espalhados em **bancos relacionais, DynamoDB, S3, logs e APIs**.  
+- **Data Warehousing:** preparar dados antes de enviá-los para **Amazon Redshift**.  
+- **Análise ad hoc:** combinar dados de múltiplas fontes para consulta via **Athena ou QuickSight**.  
+- **Machine Learning:** preparação de dados para modelos de ML no **SageMaker**.  
+
+---
