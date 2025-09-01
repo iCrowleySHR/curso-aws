@@ -1921,3 +1921,36 @@ Ele funciona como a **porta de entrada para aplicações e microservices**, cone
 - **API Gateway** é ideal para arquiteturas **serverless** e **microservices**.  
 - Para simplesmente distribuir tráfego HTTP entre instâncias EC2, um **Load Balancer** pode ser suficiente.  
 - Combine **API Gateway + Lambda** para criar backends totalmente serverless, escaláveis e seguros.  
+
+<img width="1060" height="370" alt="image" src="https://github.com/user-attachments/assets/a9c54f91-9c1e-44d0-956f-4ab407b47bd6" />
+
+# ⚙️ AWS Batch
+
+## 📌 O que é o AWS Batch?
+
+O **AWS Batch** é um serviço **totalmente gerenciado** que permite executar **jobs de computação em lote** de forma escalável na AWS.  
+Ele provisiona automaticamente os recursos de **EC2 ou Fargate** necessários para processar jobs, gerencia filas e otimiza a execução para reduzir custos.
+
+---
+
+## 🔑 Principais características
+
+- **Execução de jobs em lote:** ideal para processamento de grandes volumes de dados.  
+- **Gerenciamento automático de recursos:** provisiona e escala **EC2 ou Fargate** conforme demanda.  
+- **Filas de jobs:** organiza jobs por prioridade, dependência e grupo.  
+- **Integração com AWS:** funciona com **S3, DynamoDB, RDS, Lambda, CloudWatch**.  
+- **Suporte a contêineres:** executa jobs como contêineres Docker.  
+- **Custo otimizado:** paga apenas pelos recursos consumidos durante a execução dos jobs.  
+- **Monitoramento:** integra com CloudWatch para métricas, logs e alertas.  
+
+---
+
+## ✅ Casos de uso
+
+- **Processamento de dados em lote:** ETL, análise de logs ou transformação de arquivos grandes.  
+- **Renderização de mídia:** imagens, vídeos e animações.  
+- **Simulações científicas e financeiras:** cálculos complexos que exigem alta computação.  
+- **Treinamento de modelos ML:** executar múltiplos experimentos ou pipelines de ML.  
+- **Automação de pipelines:** jobs agendados ou acionados por eventos do S3 ou Lambda.  
+
+---
