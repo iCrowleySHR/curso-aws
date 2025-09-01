@@ -1566,3 +1566,36 @@ Ele foi projetado para armazenar, consultar e indexar **documentos JSON** de for
 - **Logs e eventos** para análises rápidas.  
 
 ---
+
+# 🕸️ Amazon Neptune
+
+## 📌 O que é o Amazon Neptune?
+
+O **Amazon Neptune** é um **banco de dados de grafos totalmente gerenciado** pela AWS, projetado para trabalhar com relacionamentos altamente conectados entre dados.  
+Ele é otimizado para **consultas de grafos complexos** e suporta os principais **motores e linguagens de grafos**:  
+- **Property Graph (Apache TinkerPop Gremlin)**  
+- **RDF (Resource Description Framework) com SPARQL**
+
+---
+
+## 🔑 Principais características
+
+- **Banco orientado a grafos:** ideal para armazenar e consultar relações complexas.  
+- **Compatibilidade:** suporta **Gremlin** e **SPARQL**.  
+- **Alto desempenho:** consultas em grafos de bilhões de relações com latência baixa.  
+- **Alta disponibilidade:** replicação em **3 zonas de disponibilidade (AZs)**.  
+- **Backups automáticos:** snapshots e recuperação point-in-time.  
+- **Segurança:** criptografia em repouso (KMS) e em trânsito (TLS), integração com **IAM e VPC**.  
+- **Gerenciamento automático:** a AWS cuida de patching, failover e monitoramento.  
+
+---
+
+## ✅ Casos de uso
+
+- **Redes sociais:** encontrar conexões entre pessoas e interesses.  
+- **Sistemas de recomendação:** sugerir produtos, filmes ou músicas com base em relacionamentos.  
+- **Detecção de fraudes:** identificar padrões suspeitos em redes de transações.  
+- **Gerenciamento de conhecimento:** modelar relações complexas em bases de dados semânticos.  
+- **IoT:** modelar interações entre dispositivos conectados.  
+
+---
