@@ -1692,3 +1692,53 @@ Ele facilita a integração de dados de múltiplas fontes e sua disponibilizaç�
 - **Machine Learning:** preparação de dados para modelos de ML no **SageMaker**.  
 
 ---
+
+# 🔄 AWS Database Migration Service (DMS)
+
+## 📌 O que é o AWS DMS?
+
+O **AWS DMS (Database Migration Service)** é um serviço **totalmente gerenciado** que facilita a **migração de bancos de dados para a AWS** de forma **rápida, segura e com mínimo downtime**.  
+Ele suporta tanto **migração homogênea** (mesmo mecanismo de banco, ex: Oracle → Oracle) quanto **heterogênea** (diferentes mecanismos, ex: Oracle → Aurora, MySQL → PostgreSQL).  
+
+---
+
+## 🔑 Principais características
+
+- **Migração com baixo downtime:** mantém o banco de origem e destino sincronizados até a troca final.  
+- **Flexível:** suporta bancos relacionais, NoSQL e data warehouses.  
+- **Homogêneo e heterogêneo:** funciona entre bancos iguais ou diferentes.  
+- **Escalável e gerenciado:** AWS gerencia patching, replicação e monitoramento.  
+- **Transformação de esquema:** com a ajuda do **AWS Schema Conversion Tool (SCT)**.  
+- **Segurança:** criptografia em trânsito (TLS) e em repouso (KMS).  
+- **Replicação contínua:** pode ser usado para sincronizar dados em tempo quase real.  
+
+---
+
+## ✅ Casos de uso
+
+- **Migração para AWS:** mover bancos locais ou em outras clouds para **RDS, Aurora, DynamoDB ou Redshift**.  
+- **Atualização de bancos:** migração de versões antigas para novas.  
+- **Conversão de mecanismos:** ex: Oracle → Aurora PostgreSQL, SQL Server → MySQL.  
+- **Replicação contínua:** manter dois bancos sincronizados durante uma transição ou integração.  
+- **Híbrido:** replicação de dados entre **on-premises** e **AWS** para testes e análises.  
+
+---
+
+## ⚖️ Comparação DMS vs SCT vs Ferramentas manuais
+
+| Aspecto                  | AWS DMS                               | AWS SCT (Schema Conversion Tool)    | Migração Manual                    |
+|---------------------------|---------------------------------------|-------------------------------------|-------------------------------------|
+| Foco                      | Migrar dados                          | Converter esquema e objetos          | Totalmente customizável             |
+| Suporte a heterogêneo     | ✅ Sim                                | ✅ Sim                               | Depende do DBA                      |
+| Downtime                  | Mínimo (replicação contínua)          | N/A                                 | Geralmente maior                    |
+| Complexidade              | Baixa (gerenciado)                   | Média (ajuda na conversão)           | Alta (precisa de scripts manuais)   |
+| Melhor uso                | Migração rápida e segura              | Suporte a DMS em conversões          | Casos muito específicos             |
+
+---
+
+## ⚠️ Observações
+
+- O **DMS move dados**, mas não converte estruturas complexas (views, procedures, funções) — para isso existe o **SCT**.  
+- É amplamente usado em **projetos de modernização**, por exemplo, migrar Oracle/SQL Server on-premises para **Aurora PostgreSQL** ou **MySQL**.  
+- Cobra apenas pelo tempo de execução das instâncias de replicação usadas.  
+
