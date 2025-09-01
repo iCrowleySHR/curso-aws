@@ -1742,3 +1742,84 @@ Ele suporta tanto **migração homogênea** (mesmo mecanismo de banco, ex: Oracl
 - É amplamente usado em **projetos de modernização**, por exemplo, migrar Oracle/SQL Server on-premises para **Aurora PostgreSQL** ou **MySQL**.  
 - Cobra apenas pelo tempo de execução das instâncias de replicação usadas.  
 
+# 🐳 Amazon ECS, ECR e Fargate
+
+## 📌 O que é o Amazon ECS?
+
+O **Amazon ECS (Elastic Container Service)** é um **serviço gerenciado de orquestração de contêineres** da AWS.  
+Ele permite executar, gerenciar e escalar **aplicações em contêineres Docker** de forma simples e segura.
+
+---
+
+## 🔑 Principais características do ECS
+
+- **Orquestração de contêineres:** gerencia execução, escalabilidade e balanceamento de cargas.  
+- **Integração com AWS:** funciona nativamente com **VPC, IAM, CloudWatch e ALB**.  
+- **Suporte a clusters:** permite agrupar instâncias EC2 para rodar contêineres.  
+- **Flexibilidade de deploy:** funciona tanto com EC2 quanto com Fargate (serverless).  
+- **Segurança:** controle de acesso granular via IAM, networking seguro e roles para contêineres.  
+
+---
+
+## 📌 O que é o Amazon ECR?
+
+O **Amazon ECR (Elastic Container Registry)** é um **repositório gerenciado de imagens Docker**.  
+Ele facilita **armazenar, versionar e distribuir imagens de contêineres** usadas pelo ECS, Fargate ou Kubernetes (EKS).
+
+---
+
+## 🔑 Principais características do ECR
+
+- **Armazenamento seguro de imagens:** integrado com **IAM para controle de acesso**.  
+- **Alta disponibilidade:** imagens replicadas automaticamente.  
+- **Integração com ECS, Fargate e EKS:** facilita CI/CD e deploy contínuo.  
+- **Compatibilidade Docker:** qualquer ferramenta Docker pode enviar e buscar imagens.  
+- **Versionamento automático:** mantém histórico de imagens e tags.  
+
+---
+
+## 📌 O que é o AWS Fargate?
+
+O **AWS Fargate** é uma **opção serverless do ECS** que permite executar contêineres **sem gerenciar servidores ou clusters EC2**.  
+Você só precisa definir CPU, memória e container, e a AWS gerencia o resto.
+
+---
+
+## 🔑 Principais características do Fargate
+
+- **Serverless:** elimina a necessidade de gerenciar instâncias EC2.  
+- **Escalabilidade automática:** ajusta recursos conforme a demanda de contêineres.  
+- **Integração com ECS e EKS:** deploy simples de aplicações containerizadas.  
+- **Segurança:** isolamento de contêineres e integração com IAM e VPC.  
+- **Cobrança por recurso usado:** paga apenas por CPU/memória consumidos pelo contêiner.  
+
+---
+
+## ✅ Casos de uso ECS + ECR + Fargate
+
+- Deploy de **aplicações microservices** com contêineres.  
+- **CI/CD:** pipelines integrados com CodePipeline e CodeBuild.  
+- **Aplicações web e APIs** escaláveis.  
+- **Execução de workloads temporários ou batch** sem gerenciar servidores.  
+- **Desenvolvimento e teste de contêineres** com deploy rápido.  
+
+---
+
+## ⚖️ Comparação ECS + EC2 vs Fargate
+
+| Aspecto                  | ECS + EC2                              | Fargate                               |
+|---------------------------|----------------------------------------|---------------------------------------|
+| Gerenciamento de servidores | Usuário gerencia instâncias EC2        | Serverless, AWS gerencia tudo         |
+| Escalabilidade            | Manual ou com auto-scaling EC2         | Automática conforme contêineres       |
+| Custo                     | Paga pelas instâncias EC2 provisionadas| Paga apenas por CPU/memória usada     |
+| Flexibilidade             | Total controle sobre instâncias        | Menos controle, mais simplicidade     |
+| Casos de uso              | Apps complexas, customização de infra  | Microservices, batch, apps serverless |
+
+---
+
+## ⚠️ Observações
+
+- Use **ECR** sempre que precisar de um repositório seguro para imagens Docker.  
+- Use **Fargate** quando quiser simplicidade e não quiser gerenciar servidores.  
+- Use **ECS + EC2** quando precisar de maior controle sobre a infraestrutura ou customização de instâncias.  
+
