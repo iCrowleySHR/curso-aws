@@ -1599,3 +1599,33 @@ Ele é otimizado para **consultas de grafos complexos** e suporta os principais 
 - **IoT:** modelar interações entre dispositivos conectados.  
 
 ---
+# ⏱️ Amazon Timestream
+
+## 📌 O que é o Amazon Timestream?
+
+O **Amazon Timestream** é um banco de dados **serverless, totalmente gerenciado e otimizado para séries temporais**.  
+Ele foi projetado para lidar com **dados que variam ao longo do tempo** (como métricas, logs, eventos e dados de IoT), permitindo ingestão, armazenamento e consulta em grande escala com baixa latência.
+
+---
+
+## 🔑 Principais características
+
+- **Especializado em séries temporais:** otimizado para dados que possuem carimbo de data/hora.  
+- **Serverless:** escalabilidade automática, sem necessidade de gerenciar servidores.  
+- **Armazenamento em camadas:** separa automaticamente dados **recentes (quentes)** e **históricos (frios)** para otimizar custo/performance.  
+- **Consultas SQL:** usa linguagem SQL estendida para funções de séries temporais.  
+- **Alto desempenho:** ingestão de milhões de eventos por segundo.  
+- **Integrações nativas:** funciona com **IoT Core, Kinesis, CloudWatch, Lambda e Grafana**.  
+- **Segurança:** criptografia com KMS e controle de acesso via IAM.  
+
+---
+
+## ✅ Casos de uso
+
+- **IoT:** monitoramento de dispositivos conectados em tempo real.  
+- **DevOps / Observabilidade:** análise de métricas de aplicações, logs de sistemas e dados de sensores.  
+- **Monitoramento industrial:** leitura de máquinas, sensores e equipamentos.  
+- **Aplicações financeiras:** séries temporais de preços e transações.  
+- **Análises em tempo real:** dashboards de performance e alertas automáticos.  
+
+---
