@@ -1444,6 +1444,8 @@ Ele permite analisar, transformar e processar dados em **clusters escaláveis** 
 O **Amazon Athena** é um serviço **serverless de consulta interativa** que permite executar **queries SQL diretamente em dados armazenados no Amazon S3**.  
 Não é necessário provisionar servidores ou clusters: você paga apenas pelas consultas realizadas.
 
+Dica: Analíse um S3 usando serverless SQL. USE ATHENA
+
 ---
 
 ## 🔑 Principais características
@@ -1485,3 +1487,82 @@ Não é necessário provisionar servidores ou clusters: você paga apenas pelas 
 - Para **ETL complexo ou machine learning**, o EMR é mais adequado.  
 - Athena brilha em arquiteturas de **Data Lake** junto com **S3 e Glue**.  
 
+# 📊 Amazon QuickSight
+
+## 📌 O que é o Amazon QuickSight?
+
+O **Amazon QuickSight** é o serviço de **Business Intelligence (BI) da AWS**, totalmente gerenciado e **serverless**, que permite criar **dashboards interativos, relatórios e visualizações de dados**.  
+Ele conecta-se a diversas fontes (como **S3, Athena, Redshift, RDS, DynamoDB** e até bancos externos) para transformar dados em **insights visuais**.
+
+---
+
+## 🔑 Principais características
+
+- **Serverless:** não há necessidade de provisionar infraestrutura.  
+- **Visualizações interativas:** gráficos, tabelas dinâmicas, mapas e dashboards responsivos.  
+- **Integrações nativas:** conecta facilmente com **Athena, Redshift, RDS, S3** e serviços externos (via JDBC/ODBC).  
+- **Machine Learning embutido:** insights automáticos, detecção de anomalias, previsão de tendências.  
+- **Acesso multiplataforma:** disponível em **navegador e aplicativo mobile**.  
+- **Escalabilidade:** pode atender desde um time pequeno até milhares de usuários.  
+- **Custo otimizado:** baseado em usuários ativos ou capacidade de uso.  
+
+---
+
+## ✅ Casos de uso
+
+- **Dashboards executivos** para monitorar KPIs.  
+- **Relatórios de vendas e marketing.**  
+- **Monitoramento em tempo quase real** (quando conectado a fontes como Redshift ou Kinesis).  
+- **Visualização de dados de Data Lakes (S3 + Athena).**  
+- **Análise financeira, de operações e suporte a decisões estratégicas.**  
+
+---
+
+## ⚖️ Comparação QuickSight vs outras ferramentas BI
+
+| Aspecto                  | QuickSight                           | Tableau / Power BI                    |
+|---------------------------|--------------------------------------|---------------------------------------|
+| Modelo de uso             | 100% gerenciado e serverless (AWS)   | Precisa instalar/gerenciar servidores ou SaaS |
+| Integração AWS            | Nativa (Athena, Redshift, S3, RDS)  | Integração via conectores adicionais  |
+| Machine Learning          | Integrado (previsões, anomalias)    | Necessário configurar separadamente   |
+| Custos                    | Baseado em uso (pay-per-session)    | Licenças fixas por usuário            |
+| Escalabilidade            | Automática                          | Limitada à capacidade do servidor     |
+
+---
+
+## ⚠️ Observações
+
+- Ideal quando os **dados já estão na AWS** (S3, Athena, Redshift, RDS).  
+- Fácil de usar para **dashboards rápidos e análises visuais** sem precisar de muita configuração.  
+- Pode substituir ou complementar ferramentas como Tableau ou Power BI, especialmente em **ambientes 100% AWS**.  
+
+
+# 📚 Amazon DocumentDB
+
+## 📌 O que é o Amazon DocumentDB?
+
+O **Amazon DocumentDB** é um banco de dados **NoSQL gerenciado pela AWS** compatível com o **MongoDB**.  
+Ele foi projetado para armazenar, consultar e indexar **documentos JSON** de forma escalável, segura e altamente disponível, sem a complexidade de gerenciar servidores de banco.
+
+---
+
+## 🔑 Principais características
+
+- **Compatibilidade com MongoDB:** drivers e APIs do MongoDB funcionam no DocumentDB.  
+- **Escalabilidade:** aumenta leitura e armazenamento sob demanda.  
+- **Alta disponibilidade:** arquitetura com replicação automática em **3 zonas de disponibilidade (AZs)**.  
+- **Backups automáticos:** snapshots contínuos e recuperação point-in-time.  
+- **Segurança:** criptografia em trânsito (TLS) e em repouso (KMS), integração com **IAM e VPC**.  
+- **Gerenciamento automático:** a AWS cuida de patching, failover e monitoramento.  
+
+---
+
+## ✅ Casos de uso
+
+- **Aplicações web e móveis** que armazenam dados semiestruturados (JSON).  
+- **Catálogos de produtos** em e-commerce.  
+- **Perfis de usuários** em redes sociais ou apps.  
+- **Sistemas de gerenciamento de conteúdo (CMS).**  
+- **Logs e eventos** para análises rápidas.  
+
+---
