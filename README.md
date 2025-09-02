@@ -1980,3 +1980,26 @@ O **Amazon Lightsail** é um serviço de nuvem simplificado da AWS, voltado para
 ---
 👉 Em resumo, o **AWS Lightsail** é uma forma prática e econômica de usar a nuvem da AWS sem precisar lidar com toda a complexidade do EC2 e da VPC.
 
+# AWS CloudFormation
+
+O **AWS CloudFormation** é um serviço que permite **modelar e provisionar recursos da AWS de forma automática**, usando arquivos de configuração no formato **YAML ou JSON**, conhecidos como *templates*.  
+
+Ele facilita a **infraestrutura como código (IaC)**, garantindo que o ambiente seja criado, atualizado e excluído de maneira previsível e controlada.
+
+---
+
+## Principais Características
+- **Infraestrutura como Código (IaC)**: define recursos (EC2, RDS, S3, VPC etc.) em arquivos versionáveis.
+- **Automatização**: cria e gerencia pilhas (*stacks*) de forma automática.
+- **Reprodutibilidade**: garante que ambientes sejam criados de forma idêntica.
+- **Integração**: funciona junto com serviços como IAM, CloudTrail, AWS Config e CodePipeline.
+
+---
+
+## Conceitos-Chave
+- **Template**: arquivo YAML/JSON que descreve os recursos.
+- **Stack (Pilha)**: conjunto de recursos criados a partir de um template.
+- **Change Set**: visualização das alterações antes de aplicá-las.
+- **Drift Detection**: detecta se houve mudanças manuais na infraestrutura fora do CloudFormation.
+
+---
