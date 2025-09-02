@@ -2027,3 +2027,52 @@ Ele facilita a **infraestrutura como código (IaC)**, garantindo que o ambiente 
 - **Drift Detection**: detecta se houve mudanças manuais na infraestrutura fora do CloudFormation.
 
 ---
+
+# AWS Elastic Beanstalk
+
+## O que é?
+O **AWS Elastic Beanstalk** é um serviço de *Platform as a Service (PaaS)* que facilita a implantação, gerenciamento e escalabilidade de aplicações na nuvem.  
+Ele cuida automaticamente de **infraestrutura**, como provisionamento de servidores, balanceamento de carga, escalabilidade automática e monitoramento, enquanto você foca no **código da aplicação**.
+
+---
+
+## Como funciona?
+1. O desenvolvedor faz o upload do código da aplicação (em linguagens suportadas).
+2. O Beanstalk provisiona automaticamente:
+   - **Instâncias EC2**
+   - **Load Balancer**
+   - **Auto Scaling**
+   - **Banco de dados (opcional)**
+3. Ele faz o deploy e gerencia as atualizações da aplicação.
+4. O ambiente é monitorado pelo **Amazon CloudWatch**.
+
+---
+
+## Tecnologias suportadas
+- **Java**
+- **.NET**
+- **Node.js**
+- **Python**
+- **Ruby**
+- **Go**
+- **PHP**
+- **Docker**
+
+---
+
+## Benefícios
+- Deploy rápido e simplificado.
+- Escalabilidade automática.
+- Integração com outros serviços AWS.
+- Gerenciamento simplificado de ambientes.
+- Sem custo adicional além dos recursos provisionados (EC2, RDS, etc.).
+
+---
+
+## Caso de uso
+- Hospedagem de aplicações web em produção.
+- APIs REST simples.
+- Ambientes de testes e desenvolvimento.
+- Aplicações que precisam de escalabilidade automática.
+
+---
