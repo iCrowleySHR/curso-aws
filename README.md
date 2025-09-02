@@ -1954,3 +1954,29 @@ Ele provisiona automaticamente os recursos de **EC2 ou Fargate** necessários pa
 - **Automação de pipelines:** jobs agendados ou acionados por eventos do S3 ou Lambda.  
 
 ---
+
+# AWS Lightsail
+
+O **Amazon Lightsail** é um serviço de nuvem simplificado da AWS, voltado para quem precisa criar aplicações ou sites rapidamente sem a complexidade dos serviços mais avançados da AWS.
+
+## Características principais
+- 💡 **Facilidade de uso**: interface simples, voltada para iniciantes ou pequenos projetos.
+- ⚡ **Servidores virtuais (VPS)**: você pode criar instâncias pré-configuradas com sistemas operacionais ou aplicações (WordPress, LAMP, Node.js, etc.).
+- 🌍 **Rede e DNS**: gerenciamento simplificado de domínios, IPs estáticos e DNS.
+- 📊 **Preço previsível**: planos fixos de cobrança mensal, diferente do modelo sob demanda do EC2.
+- 🔗 **Integração com AWS**: pode se conectar com outros serviços AWS conforme sua aplicação cresce.
+
+## Casos de uso
+- Hospedagem de sites e blogs (ex.: WordPress).
+- Aplicações web simples.
+- Ambientes de teste e desenvolvimento.
+- Pequenos bancos de dados e aplicações internas.
+- Alternativa simplificada ao **EC2** para quem não precisa de alta escalabilidade.
+
+## Comparação com EC2
+- **Lightsail**: mais simples, preços previsíveis, ideal para iniciantes e pequenos projetos.
+- **EC2**: mais flexível, escalável e integrado, mas mais complexo e com cobrança sob demanda.
+
+---
+👉 Em resumo, o **AWS Lightsail** é uma forma prática e econômica de usar a nuvem da AWS sem precisar lidar com toda a complexidade do EC2 e da VPC.
+
