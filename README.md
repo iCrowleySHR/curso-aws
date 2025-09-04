@@ -2382,3 +2382,27 @@ Ele distribui conteúdo estático e dinâmico (sites, vídeos, APIs) globalmente
 - Aplicações que precisam de baixa latência para usuários em diferentes regiões.  
 
 ---
+
+# Amazon S3 Transfer Acceleration
+
+## O que é?
+O **S3 Transfer Acceleration** é um recurso do **Amazon S3** que permite **transferir arquivos para e a partir de buckets S3 mais rapidamente**, usando a rede global de **pontos de presença da Amazon CloudFront**.
+
+Ele é útil especialmente quando os usuários ou aplicações estão **longe da região do bucket**, melhorando a velocidade de upload e download.
+
+---
+
+## Como funciona
+- Quando ativado, os uploads e downloads passam por **edge locations da CloudFront**.  
+- O conteúdo é roteado de forma otimizada pela rede da AWS até o bucket S3.  
+- Funciona com **uploads grandes, uploads multipart e downloads de objetos**.  
+
+---
+
+## Benefícios
+- **Aceleração de transferências** para usuários globais.  
+- **Fácil de habilitar** no bucket S3 sem mudar a aplicação.  
+- **Transparente para aplicações existentes** que usam o endpoint especial do Transfer Acceleration.  
+- **Redução de latência** e aumento de throughput para uploads/downloads remotos.  
+
+---
