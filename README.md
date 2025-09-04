@@ -2459,3 +2459,8 @@ Permite executar serviços como **EC2, EBS, RDS, S3 e ECS** localmente, mantendo
 O **AWS Wavelength** estende a infraestrutura da AWS até **a borda da rede 5G** de provedores de telecomunicações.  
 Permite executar aplicações **com latência ultra-baixa** próximas aos dispositivos móveis, ideal para jogos, streaming, IoT e aplicações em tempo real.
 
+# AWS Local Zones
+
+## O que é?
+O **AWS Local Zones** estende a infraestrutura da AWS para **proximidade com grandes centros urbanos**, permitindo executar aplicações **com baixa latência** para usuários finais, mesmo que a região principal da AWS esteja distante.
+
