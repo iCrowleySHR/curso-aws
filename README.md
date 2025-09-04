@@ -2347,3 +2347,38 @@ O **Amazon Route 53** é o serviço de DNS (Domain Name System) da AWS. Ele perm
 
 ---
 
+# Amazon CloudFront
+
+## O que é?
+O **Amazon CloudFront** é um serviço de **Content Delivery Network (CDN)** da AWS.  
+Ele distribui conteúdo estático e dinâmico (sites, vídeos, APIs) globalmente, usando **pontos de presença (edge locations)** para reduzir latência e melhorar a performance para usuários finais.
+
+---
+
+## Principais Funcionalidades
+- **Distribuição de conteúdo** estático e dinâmico.  
+- **Integração com S3, EC2, ELB e Route 53**.  
+- **Suporte a HTTPS e SSL/TLS**.  
+- **Cache de conteúdo** em edge locations para acelerar acessos repetidos.  
+- **Georestrição**: bloquear ou permitir acesso por país.  
+- **Logs detalhados** para monitoramento e análise.  
+- **Invalidation**: remover conteúdo do cache quando necessário.  
+- **Integração com Lambda@Edge**: executar funções em edge locations.  
+
+---
+
+## Benefícios
+- Redução significativa de **latência** para usuários globais.  
+- **Escalabilidade automática** sem necessidade de gerenciar servidores.  
+- Proteção adicional com **AWS WAF** e SSL/TLS.  
+- Redução de custo em transferências de dados via cache.  
+
+---
+
+## Casos de Uso
+- Sites e aplicações web globais.  
+- Streaming de vídeos ou mídia sob demanda.  
+- Distribuição de APIs com alta performance.  
+- Aplicações que precisam de baixa latência para usuários em diferentes regiões.  
+
+---
