@@ -2406,3 +2406,29 @@ Ele é útil especialmente quando os usuários ou aplicações estão **longe da
 - **Redução de latência** e aumento de throughput para uploads/downloads remotos.  
 
 ---
+
+# AWS Global Accelerator
+
+## O que é?
+O **AWS Global Accelerator** é um serviço que melhora a **disponibilidade e performance de aplicações globais** ao direcionar o tráfego de usuários para **endpoints da AWS** por meio da rede de backbone da Amazon, evitando a internet pública sempre que possível.
+
+Ele atua como um **ponto de entrada fixo (IP anycast)**, distribuindo o tráfego entre regiões, instâncias EC2, load balancers, ALBs, NLBs ou endpoints de Elastic IP.
+
+---
+
+## Principais Funcionalidades
+- **Anycast IPs fixos**: um endereço IP global para os usuários se conectarem.  
+- **Roteamento inteligente**: direciona tráfego para endpoints saudáveis mais próximos do usuário.  
+- **Failover automático**: se um endpoint ficar indisponível, o tráfego é redirecionado automaticamente.  
+- **Performance otimizada**: usa a rede privada da AWS para reduzir latência.  
+- **Suporte a múltiplos tipos de endpoint**: ALB, NLB, EC2 e Elastic IP.  
+
+---
+
+## Benefícios
+- Reduz **latência** e melhora a **experiência do usuário global**.  
+- Aumenta **resiliência e disponibilidade** das aplicações.  
+- Permite **alterações de infraestrutura sem impactar usuários** (IP anycast fixo).  
+- Fácil integração com **CloudFront, S3, EC2 e Load Balancers**.  
+
+---
