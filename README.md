@@ -2186,3 +2186,55 @@ Ele compila o código-fonte, executa testes automatizados e gera artefatos pront
 - Preparar artefatos de deploy para o CodeDeploy ou S3.  
 
 ---
+
+# AWS CodePipeline
+
+## O que é?
+O **AWS CodePipeline** é um serviço de **integração e entrega contínua (CI/CD)** totalmente gerenciado.  
+Ele automatiza o processo de **build, teste e deploy** de aplicações sempre que há uma mudança no código, garantindo entregas rápidas e consistentes.
+
+---
+
+## Como funciona?
+O pipeline é dividido em **estágios**. Cada estágio contém **ações** que podem executar builds, testes ou deploys.  
+Um fluxo típico pode ser:
+1. **Source** → Obter código (ex.: CodeCommit, GitHub, S3).  
+2. **Build** → Compilar e testar (ex.: CodeBuild).  
+3. **Deploy** → Implantar aplicação (ex.: CodeDeploy, Elastic Beanstalk, ECS).  
+
+---
+
+## Principais Recursos
+- **Integração nativa** com CodeCommit, CodeBuild, CodeDeploy e CodeStar.  
+- **Compatível com provedores externos** como GitHub, GitLab, Jenkins e Bitbucket.  
+- **Execução automatizada**: dispara pipelines em cada alteração de código.  
+- **Paralelismo**: permite múltiplas ações rodando em paralelo.  
+- **Controle de aprovação manual** antes de determinados estágios.  
+- **Monitoramento** com CloudWatch e AWS CloudTrail.  
+
+---
+
+## Benefícios
+- Automação completa do ciclo de vida da aplicação.  
+- Reduz erros humanos durante o deploy.  
+- Acelera o tempo de entrega de novas versões.  
+- Flexível e personalizável com integrações externas.  
+
+---
+
+## Casos de Uso
+- Automação de **CI/CD** para microsserviços em **ECS/EKS**.  
+- Deploy contínuo de aplicações em **EC2** ou **Elastic Beanstalk**.  
+- Criação de pipelines híbridos (AWS + Jenkins/GitHub Actions).  
+- Aprovação manual antes de ir para produção.  
+
+---
+
+## Exemplo de Pipeline
+- **Source**: CodeCommit (recebe push de novo código).  
+- **Build**: CodeBuild (compila e roda testes).  
+- **Deploy**: CodeDeploy (envia para instâncias EC2).  
+
+---
+
+✅ **Resumo**: O **CodePipeline** conecta serviços como **CodeCommit**, **CodeBuild** e **CodeDeploy**, permitindo a automação completa do fluxo de **CI/CD** na AWS.
