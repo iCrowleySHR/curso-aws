@@ -2445,3 +2445,10 @@ Ele é útil para **delegar permissões**, permitir acesso temporário a usuári
 ## O que é?
 O **Amazon Cognito** é um serviço da AWS que facilita a **autenticação, autorização e gerenciamento de usuários** em aplicações web e mobile.  
 Ele oferece **login social (Facebook, Google, Apple), login corporativo (SAML, OIDC)** e também **usuários nativos** gerenciados pela própria AWS.
+
+
+# AWS Outposts
+
+## O que é?
+O **AWS Outposts** é um serviço que traz **infraestrutura e serviços nativos da AWS para o seu datacenter ou local on-premises**.  
+Permite executar serviços como **EC2, EBS, RDS, S3 e ECS** localmente, mantendo a mesma experiência da nuvem AWS.
