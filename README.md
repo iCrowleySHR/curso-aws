@@ -2452,3 +2452,10 @@ Ele oferece **login social (Facebook, Google, Apple), login corporativo (SAML, O
 ## O que é?
 O **AWS Outposts** é um serviço que traz **infraestrutura e serviços nativos da AWS para o seu datacenter ou local on-premises**.  
 Permite executar serviços como **EC2, EBS, RDS, S3 e ECS** localmente, mantendo a mesma experiência da nuvem AWS.
+
+# AWS Wavelength
+
+## O que é?
+O **AWS Wavelength** estende a infraestrutura da AWS até **a borda da rede 5G** de provedores de telecomunicações.  
+Permite executar aplicações **com latência ultra-baixa** próximas aos dispositivos móveis, ideal para jogos, streaming, IoT e aplicações em tempo real.
+
