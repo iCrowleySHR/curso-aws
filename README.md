@@ -2271,3 +2271,31 @@ Ele permite **armazenar, compartilhar e gerenciar dependências de software** us
 - Integrar em pipelines de **CI/CD com CodeBuild e CodePipeline**.  
 
 ---
+
+# AWS Systems Manager (SSM)
+
+## O que é?
+O **AWS Systems Manager (SSM)** é um serviço que ajuda a **gerenciar, monitorar e automatizar** a infraestrutura em **EC2, RDS, EKS, on-premises e outros recursos da AWS**.  
+Ele fornece uma **visão centralizada** e ferramentas para executar comandos, aplicar patches, gerenciar configurações e coletar informações de inventário.
+
+---
+
+## Principais Recursos
+- **Session Manager**: acesso seguro a instâncias EC2 via browser/CLI, sem precisar de chave SSH.  
+- **Run Command**: executa comandos em várias instâncias ao mesmo tempo.  
+- **Automation**: cria fluxos automatizados para tarefas recorrentes (ex.: aplicar patches).  
+- **Parameter Store**: armazena variáveis e segredos de forma segura.  
+- **Patch Manager**: aplica patches de segurança automaticamente.  
+- **Inventory**: coleta dados de configuração e software instalado.  
+- **State Manager**: mantém configurações desejadas de instâncias.  
+
+---
+
+## Benefícios
+- Reduz a necessidade de acessar servidores via SSH.  
+- Ajuda a manter conformidade e segurança.  
+- Permite automação em larga escala.  
+- Integração com **CloudWatch**, **IAM** e **CloudTrail**.  
+- Funciona em nuvem e também em servidores on-premises.  
+
+---
