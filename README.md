@@ -2076,3 +2076,43 @@ Ele cuida automaticamente de **infraestrutura**, como provisionamento de servido
 - Aplicações que precisam de escalabilidade automática.
 
 ---
+
+# AWS CodeDeploy
+
+## O que é?
+O **AWS CodeDeploy** é um serviço de **deploy automatizado** que facilita a atualização de aplicações em instâncias **Amazon EC2**, **Lambda** ou servidores **on-premises**, reduzindo erros manuais e diminuindo o tempo de inatividade.
+
+---
+
+## Principais Recursos
+- **Automação** do processo de deploy (zero-downtime quando configurado com load balancers).  
+- **Suporte a diferentes plataformas**: EC2, ECS, Lambda e até servidores locais.  
+- **Estratégias de implantação**: in-place, blue/green, canary e linear.  
+- **Monitoramento e rollback automático** em caso de falha.  
+- **Integração com CI/CD**: funciona com CodePipeline, CodeBuild, GitHub, Bitbucket, Jenkins etc.  
+
+---
+
+## Tipos de Deploy
+- **In-Place Deployment**: substitui a versão da aplicação diretamente na instância.  
+- **Blue/Green Deployment**: cria um novo ambiente com a nova versão e depois redireciona o tráfego.  
+
+---
+
+## Benefícios
+- Evita indisponibilidade durante atualizações.  
+- Padroniza o processo de deploy.  
+- Fácil integração com pipelines de entrega contínua.  
+- Funciona tanto em nuvem quanto em servidores locais.  
+
+---
+
+## Casos de Uso
+- Deploy de APIs em EC2.  
+- Deploy de microsserviços em containers ECS.  
+- Deploy de funções serverless (AWS Lambda).  
+- Atualização de aplicações corporativas em servidores físicos/VMs.  
+
+---
+
+✅ **Resumo**: O **CodeDeploy** ajuda a automatizar e padronizar o processo de deploy, reduzindo falhas e garantindo maior disponibilidade das aplicações.
