@@ -2432,3 +2432,9 @@ Ele atua como um **ponto de entrada fixo (IP anycast)**, distribuindo o tráfego
 - Fácil integração com **CloudFront, S3, EC2 e Load Balancers**.  
 
 ---
+
+# AWS Security Token Service (STS)
+
+## O que é?
+O **AWS Security Token Service (STS)** é um serviço que permite **emitir credenciais temporárias** para acessar recursos da AWS de forma segura.  
+Ele é útil para **delegar permissões**, permitir acesso temporário a usuários, aplicações ou serviços sem precisar compartilhar chaves permanentes.
