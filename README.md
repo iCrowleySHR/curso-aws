@@ -2311,3 +2311,39 @@ O **AWS Systems Manager Parameter Store** é um serviço que permite armazenar, 
 - **SecureString** → valores criptografados com KMS.
 
 ---
+
+# Amazon Route 53
+
+O **Amazon Route 53** é o serviço de DNS (Domain Name System) da AWS. Ele permite gerenciar domínios, registros DNS e também pode atuar como balanceador de carga e verificador de saúde.
+
+---
+
+## Funcionalidades Principais
+
+- **Registro de domínios** → comprar e gerenciar nomes de domínio.  
+- **Gerenciamento de DNS** → criar e gerenciar zonas hospedadas e registros.  
+- **Health Checks** → monitorar endpoints e integrar com roteamento.  
+- **Políticas de Roteamento**:
+  - **Simple Routing** → envia tráfego para um único recurso.  
+  - **Weighted Routing** → distribui tráfego proporcionalmente entre recursos.  
+  - **Latency-based Routing** → envia usuários para a região de menor latência.  
+  - **Failover Routing** → redireciona tráfego se um recurso ficar indisponível.  
+  - **Geolocation Routing** → direciona tráfego com base na localização do usuário.  
+
+---
+
+## Conceitos Básicos
+
+- **Hosted Zone** → é como uma "caixa" que guarda os registros DNS de um domínio.  
+- **Record Set** → mapeia um nome de domínio para um recurso (IP, Load Balancer, S3, etc).  
+- **Tipos Comuns de Registros**:
+  - **A** → IPv4.  
+  - **AAAA** → IPv6.  
+  - **CNAME** → apelido para outro domínio.  
+  - **MX** → servidores de e-mail.  
+  - **NS** → servidores de nome da zona hospedada.  
+  - **TXT** → informações de verificação (ex: SPF, DKIM).  
+  - **Alias** → atalho para recursos da AWS (ELB, S3, CloudFront, etc).  
+
+---
+
