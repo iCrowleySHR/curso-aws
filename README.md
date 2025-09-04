@@ -2299,3 +2299,15 @@ Ele fornece uma **visão centralizada** e ferramentas para executar comandos, ap
 - Funciona em nuvem e também em servidores on-premises.  
 
 ---
+
+# AWS Systems Manager Parameter Store (SSM Store)
+
+O **AWS Systems Manager Parameter Store** é um serviço que permite armazenar, gerenciar e recuperar dados de configuração e segredos de forma segura e centralizada.
+
+## Tipos de Parâmetros
+
+- **String** → texto simples.
+- **StringList** → lista separada por vírgulas.
+- **SecureString** → valores criptografados com KMS.
+
+---
