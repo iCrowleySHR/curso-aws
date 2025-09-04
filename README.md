@@ -2152,3 +2152,37 @@ Ele permite armazenar, versionar e colaborar em código-fonte de forma segura e 
 ---
 
 ✅ **Resumo**: O **CodeCommit** é um repositório Git privado, seguro e totalmente gerenciado pela AWS, ideal para equipes que já usam outros serviços AWS e querem integração nativa no fluxo de desenvolvimento.
+
+# AWS CodeBuild
+
+## O que é?
+O **AWS CodeBuild** é um serviço de **integração contínua (CI)** totalmente gerenciado.  
+Ele compila o código-fonte, executa testes automatizados e gera artefatos prontos para implantação, sem precisar configurar ou manter servidores de build.
+
+---
+
+## Principais Recursos
+- **Build totalmente gerenciado**: a AWS cuida da infraestrutura.  
+- **Escalabilidade automática**: cada build roda em um contêiner isolado.  
+- **Pagamentos sob demanda**: só paga pelo tempo de build usado.  
+- **Buildspec.yml**: arquivo de configuração que define instruções de build e testes.  
+- **Logs em tempo real** via Amazon CloudWatch.  
+- **Integração nativa** com CodeCommit, CodePipeline, CodeDeploy, GitHub e Bitbucket.  
+
+---
+
+## Benefícios
+- Elimina a necessidade de manter servidores próprios de CI.  
+- Fácil integração em pipelines de CI/CD.  
+- Escalável e sob demanda, sem filas de espera.  
+- Seguro, com permissões gerenciadas pelo IAM.  
+
+---
+
+## Casos de Uso
+- Compilar aplicações Java, Node.js, Python, Go, .NET e muitas outras.  
+- Executar testes automatizados.  
+- Gerar imagens Docker e enviar para o Amazon ECR.  
+- Preparar artefatos de deploy para o CodeDeploy ou S3.  
+
+---
