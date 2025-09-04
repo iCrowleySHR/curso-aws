@@ -2238,3 +2238,36 @@ Um fluxo típico pode ser:
 ---
 
 ✅ **Resumo**: O **CodePipeline** conecta serviços como **CodeCommit**, **CodeBuild** e **CodeDeploy**, permitindo a automação completa do fluxo de **CI/CD** na AWS.
+
+# AWS CodeArtifact
+
+## O que é?
+O **AWS CodeArtifact** é um serviço de **gerenciamento de pacotes** totalmente gerenciado.  
+Ele permite **armazenar, compartilhar e gerenciar dependências de software** usadas em aplicações, integrado diretamente a ecossistemas como **npm, Maven, PyPI e NuGet**.
+
+---
+
+## Principais Recursos
+- **Repositórios privados de pacotes** com controle de acesso via IAM.  
+- **Integração nativa** com ferramentas populares de build (npm, pip, Maven, Gradle, NuGet).  
+- **Conexão com repositórios públicos** (ex.: npmjs, Maven Central, PyPI), fazendo cache automático dos pacotes baixados.  
+- **Controle de versões** para bibliotecas e dependências.  
+- **Segurança**: todos os pacotes são criptografados em repouso (KMS) e em trânsito (HTTPS).  
+
+---
+
+## Benefícios
+- Elimina a necessidade de hospedar servidores próprios de repositórios de pacotes (como Nexus ou Artifactory).  
+- Facilita o compartilhamento de pacotes entre equipes e projetos.  
+- Reduz riscos de indisponibilidade em repositórios públicos (cache local).  
+- Gestão centralizada de dependências com permissões granulares (IAM).  
+
+---
+
+## Casos de Uso
+- Armazenar **dependências internas** de uma organização (ex.: bibliotecas corporativas).  
+- Criar um **repositório privado seguro** para times de desenvolvimento.  
+- Usar como **cache de dependências públicas** para maior performance e disponibilidade.  
+- Integrar em pipelines de **CI/CD com CodeBuild e CodePipeline**.  
+
+---
