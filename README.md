@@ -2438,3 +2438,10 @@ Ele atua como um **ponto de entrada fixo (IP anycast)**, distribuindo o tráfego
 ## O que é?
 O **AWS Security Token Service (STS)** é um serviço que permite **emitir credenciais temporárias** para acessar recursos da AWS de forma segura.  
 Ele é útil para **delegar permissões**, permitir acesso temporário a usuários, aplicações ou serviços sem precisar compartilhar chaves permanentes.
+
+
+# Amazon Cognito
+
+## O que é?
+O **Amazon Cognito** é um serviço da AWS que facilita a **autenticação, autorização e gerenciamento de usuários** em aplicações web e mobile.  
+Ele oferece **login social (Facebook, Google, Apple), login corporativo (SAML, OIDC)** e também **usuários nativos** gerenciados pela própria AWS.
