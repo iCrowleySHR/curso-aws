@@ -2116,3 +2116,39 @@ O **AWS CodeDeploy** é um serviço de **deploy automatizado** que facilita a at
 ---
 
 ✅ **Resumo**: O **CodeDeploy** ajuda a automatizar e padronizar o processo de deploy, reduzindo falhas e garantindo maior disponibilidade das aplicações.
+
+# AWS CodeCommit
+
+## O que é?
+O **AWS CodeCommit** é um serviço de **repositório Git totalmente gerenciado** na nuvem AWS.  
+Ele permite armazenar, versionar e colaborar em código-fonte de forma segura e escalável, sem a necessidade de hospedar servidores Git por conta própria.
+
+---
+
+## Principais Recursos
+- **Repositórios privados Git** gerenciados pela AWS.  
+- **Integração nativa com IAM** para controle de permissões.  
+- **Criptografia automática** em repouso (AWS KMS) e em trânsito (HTTPS/SSH).  
+- **Alta disponibilidade**, rodando em múltiplas zonas de disponibilidade.  
+- **Escalável**: suporta qualquer tamanho de repositório.  
+- **Notificações e triggers** via SNS, Lambda e CloudWatch Events.  
+
+---
+
+## Benefícios
+- Elimina a necessidade de hospedar e gerenciar servidores Git.  
+- Controle de acesso seguro usando políticas do IAM.  
+- Repositórios ilimitados sem cobrança por usuário.  
+- Integração direta com **CodeBuild**, **CodePipeline** e **CodeDeploy**.  
+
+---
+
+## Casos de Uso
+- Hospedagem centralizada de código-fonte em equipes.  
+- Versionamento seguro de infraestrutura como código (CloudFormation, Terraform).  
+- Integração em pipelines de CI/CD.  
+- Alternativa privada ao GitHub/GitLab/Bitbucket para projetos críticos.  
+
+---
+
+✅ **Resumo**: O **CodeCommit** é um repositório Git privado, seguro e totalmente gerenciado pela AWS, ideal para equipes que já usam outros serviços AWS e querem integração nativa no fluxo de desenvolvimento.
