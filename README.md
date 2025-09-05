@@ -2482,3 +2482,10 @@ Ele permite **coletar, processar e analisar streams de dados** de forma contínu
 O **Amazon Simple Notification Service (SNS)** é um serviço totalmente gerenciado de **mensageria e notificações**.  
 Ele permite enviar mensagens de forma **assíncrona** para múltiplos destinatários ou sistemas, incluindo **aplicações, e-mails, SMS, SQS e endpoints HTTP/HTTPS**.
 
+# Amazon MQ
+
+## O que é?
+O **Amazon MQ** é um serviço gerenciado de **message broker** que suporta protocolos padrão como **ActiveMQ e RabbitMQ**.  
+Ele permite que aplicações se comuniquem entre si de forma confiável, usando **filas e tópicos**, sem precisar gerenciar a infraestrutura do broker.
+
+
