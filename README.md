@@ -2476,3 +2476,9 @@ Ele garante que as mensagens sejam entregues de forma confiável entre produtore
 O **Amazon Kinesis** é uma plataforma de **processamento de dados em tempo real** da AWS.  
 Ele permite **coletar, processar e analisar streams de dados** de forma contínua, oferecendo insights instantâneos e possibilitando ações rápidas.
 
+# Amazon SNS (Simple Notification Service)
+
+## O que é?
+O **Amazon Simple Notification Service (SNS)** é um serviço totalmente gerenciado de **mensageria e notificações**.  
+Ele permite enviar mensagens de forma **assíncrona** para múltiplos destinatários ou sistemas, incluindo **aplicações, e-mails, SMS, SQS e endpoints HTTP/HTTPS**.
+
