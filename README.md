@@ -2464,3 +2464,9 @@ Permite executar aplicações **com latência ultra-baixa** próximas aos dispos
 ## O que é?
 O **AWS Local Zones** estende a infraestrutura da AWS para **proximidade com grandes centros urbanos**, permitindo executar aplicações **com baixa latência** para usuários finais, mesmo que a região principal da AWS esteja distante.
 
+# Amazon SQS (Simple Queue Service)
+
+## O que é?
+O **Amazon Simple Queue Service (SQS)** é um serviço totalmente gerenciado de **fila de mensagens** que permite **desacoplar e escalar microserviços, sistemas distribuídos e aplicações serverless**.  
+Ele garante que as mensagens sejam entregues de forma confiável entre produtores e consumidores. (FIFO)
+
