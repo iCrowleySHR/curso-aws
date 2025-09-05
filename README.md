@@ -2488,4 +2488,9 @@ Ele permite enviar mensagens de forma **assíncrona** para múltiplos destinatá
 O **Amazon MQ** é um serviço gerenciado de **message broker** que suporta protocolos padrão como **ActiveMQ e RabbitMQ**.  
 Ele permite que aplicações se comuniquem entre si de forma confiável, usando **filas e tópicos**, sem precisar gerenciar a infraestrutura do broker.
 
+# Amazon EventBridge (CloudWatch Events)
+
+## O que é?
+O **Amazon EventBridge** (anteriormente conhecido como CloudWatch Events) é um serviço de **event bus** que permite **conectar aplicações usando eventos** em tempo real.  
+Ele captura eventos de **serviços AWS, aplicações SaaS ou eventos customizados** e direciona para **alvos** como Lambda, SQS, SNS, Step Functions, entre outros.
 
