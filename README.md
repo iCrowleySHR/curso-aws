@@ -2470,3 +2470,9 @@ O **AWS Local Zones** estende a infraestrutura da AWS para **proximidade com gra
 O **Amazon Simple Queue Service (SQS)** é um serviço totalmente gerenciado de **fila de mensagens** que permite **desacoplar e escalar microserviços, sistemas distribuídos e aplicações serverless**.  
 Ele garante que as mensagens sejam entregues de forma confiável entre produtores e consumidores. (FIFO)
 
+# Amazon Kinesis
+
+## O que é?
+O **Amazon Kinesis** é uma plataforma de **processamento de dados em tempo real** da AWS.  
+Ele permite **coletar, processar e analisar streams de dados** de forma contínua, oferecendo insights instantâneos e possibilitando ações rápidas.
+
