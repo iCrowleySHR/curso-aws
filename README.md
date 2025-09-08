@@ -2520,3 +2520,22 @@ Ele possui duas funcionalidades principais:
 ## O que é?
 O **AWS Health Dashboard** é um serviço que fornece **informações personalizadas em tempo real** sobre a saúde dos serviços da AWS que você utiliza.  
 Ele substituiu o **AWS Service Health Dashboard** tradicional, oferecendo insights **específicos para sua conta**.
+
+# Endereços IP na AWS  
+
+## IPv4 – Protocolo de Internet versão 4 (4,3 bilhões de endereços)  
+- **IPv4 público** – pode ser usado na Internet  
+- A instância EC2 recebe um novo endereço IPv4 público toda vez que você a para e inicia novamente (**padrão**)  
+- **IPv4 privado** – pode ser usado em redes privadas (LAN), como redes internas da AWS (ex.: `192.168.1.1`)  
+- O IPv4 privado é fixo para instâncias EC2, mesmo que você as pare/inicie novamente  
+
+## Elastic IP  
+- Permite anexar um endereço IPv4 público fixo a uma instância EC2  
+
+## Nota  
+- Todos os endereços IPv4 públicos na AWS serão cobrados a **US$ 0,005 por hora (incluindo EIP)**  
+
+## IPv6 – Protocolo de Internet versão 6 (3,4 × 10³⁸ endereços)  
+- Todo endereço IP é público na AWS (não há faixa privada)  
+- Exemplo: `2001:db8:3333:4444:cccc:dddd:eeee:ffff`  
+- **Gratuito**  
