@@ -2539,3 +2539,13 @@ Ele substituiu o **AWS Service Health Dashboard** tradicional, oferecendo insigh
 - Todo endereço IP é público na AWS (não há faixa privada)  
 - Exemplo: `2001:db8:3333:4444:cccc:dddd:eeee:ffff`  
 - **Gratuito**  
+
+# VPC & Subnets Primer
+
+- **VPC - Virtual Private Cloud**: rede privada para implantar seus recursos (recurso regional)
+- **Subnets** permitem particionar sua rede dentro da sua VPC (recurso de Zona de Disponibilidade)
+- **Uma subnet pública** é uma subnet que é acessível da internet
+- **Uma subnet privada** é uma subnet que não é acessível da internet
+- Para definir acesso à internet e entre subnets, usamos **Tabelas de Roteamento (Route Tables)**
+
+<img width="436" height="512" alt="image" src="https://github.com/user-attachments/assets/c2e5b144-9a98-4435-a8b5-3a8cb6aa63e5" />
