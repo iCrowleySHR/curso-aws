@@ -2505,3 +2505,12 @@ Ele permite **auditar atividades, investigar incidentes de segurança e atender 
 ## O que é?
 O **AWS X-Ray** é um serviço que ajuda desenvolvedores a **analisar e depurar aplicações distribuídas** em produção ou em testes.  
 Ele fornece **rastreamento de requisições de ponta a ponta**, ajudando a identificar gargalos de performance e erros.
+
+# Amazon CodeGuru
+
+## O que é?
+O **Amazon CodeGuru** é um serviço de **machine learning para desenvolvedores** que ajuda a **melhorar a qualidade do código** e **otimizar desempenho de aplicações**.  
+Ele possui duas funcionalidades principais:
+
+- **CodeGuru Reviewer** → analisa código fonte e identifica problemas de qualidade, segurança e boas práticas.  
+- **CodeGuru Profiler** → monitora aplicações em execução e aponta gargalos de performance e custo.  
