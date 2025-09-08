@@ -2564,4 +2564,7 @@ Um **Network ACL** é um **firewall em nível de sub-rede**, controlando o tráf
 - Funciona no **nível da sub-rede**.  
 - **Stateless**: regras de entrada e saída devem ser definidas separadamente.  
 
+<img width="387" height="489" alt="image" src="https://github.com/user-attachments/assets/dba74958-7593-424a-8524-a22a410ba0e8" />
+
+
 ---
