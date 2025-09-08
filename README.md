@@ -2494,3 +2494,8 @@ Ele permite que aplicações se comuniquem entre si de forma confiável, usando 
 O **Amazon EventBridge** (anteriormente conhecido como CloudWatch Events) é um serviço de **event bus** que permite **conectar aplicações usando eventos** em tempo real.  
 Ele captura eventos de **serviços AWS, aplicações SaaS ou eventos customizados** e direciona para **alvos** como Lambda, SQS, SNS, Step Functions, entre outros.
 
+# AWS CloudTrail
+
+## O que é?
+O **AWS CloudTrail** é um serviço que registra, armazena e monitora as chamadas de API feitas na sua conta AWS.  
+Ele permite **auditar atividades, investigar incidentes de segurança e atender requisitos de conformidade**.
