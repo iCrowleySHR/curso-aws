@@ -2499,3 +2499,9 @@ Ele captura eventos de **serviços AWS, aplicações SaaS ou eventos customizado
 ## O que é?
 O **AWS CloudTrail** é um serviço que registra, armazena e monitora as chamadas de API feitas na sua conta AWS.  
 Ele permite **auditar atividades, investigar incidentes de segurança e atender requisitos de conformidade**.
+
+# AWS X-Ray
+
+## O que é?
+O **AWS X-Ray** é um serviço que ajuda desenvolvedores a **analisar e depurar aplicações distribuídas** em produção ou em testes.  
+Ele fornece **rastreamento de requisições de ponta a ponta**, ajudando a identificar gargalos de performance e erros.
