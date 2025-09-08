@@ -2679,3 +2679,10 @@ Existem dois tipos principais:
    - Ideal para acesso remoto seguro de funcionários.  
 
 ---
+
+# AWS Direct Connect (Site-to-Site)
+
+## O que é?
+O **AWS Direct Connect** é um serviço que fornece **conexões de rede privadas e dedicadas** entre sua rede on-premises e a AWS.  
+Diferente da VPN tradicional, o tráfego não passa pela Internet pública, oferecendo **baixa latência, maior largura de banda e segurança aprimorada**.
+
