@@ -2661,3 +2661,21 @@ Existem dois tipos principais de VPC Endpoints:
 ## O que é?
 O **AWS PrivateLink** permite que você acesse serviços **AWS ou de parceiros** de forma **privada** dentro da sua VPC, sem expor tráfego à Internet.  
 Ele cria uma **interface de rede (ENI)** com um **endpoint privado**, garantindo comunicação segura e de baixa latência.
+
+# AWS VPN (Virtual Private Network)
+
+## O que é?
+O **AWS VPN** permite criar uma **conexão segura e criptografada** entre sua rede local (on-premises) ou dispositivos individuais e a AWS.  
+Ele garante que o tráfego entre sua infraestrutura e a AWS **permaneça privado e seguro**.
+
+Existem dois tipos principais:
+
+1. **Site-to-Site VPN**  
+   - Conecta uma rede on-premises inteira à AWS via Internet criptografada.  
+   - Funciona como um **túnel IPsec**.  
+
+2. **Client VPN**  
+   - Permite que usuários individuais se conectem à VPC usando **OpenVPN** ou outros clientes compatíveis.  
+   - Ideal para acesso remoto seguro de funcionários.  
+
+---
