@@ -2656,3 +2656,8 @@ Existem dois tipos principais de VPC Endpoints:
 - Reduzir dependência de **firewalls e NAT Gateways** para serviços internos.  
 
 ---
+# AWS PrivateLink
+
+## O que é?
+O **AWS PrivateLink** permite que você acesse serviços **AWS ou de parceiros** de forma **privada** dentro da sua VPC, sem expor tráfego à Internet.  
+Ele cria uma **interface de rede (ENI)** com um **endpoint privado**, garantindo comunicação segura e de baixa latência.
