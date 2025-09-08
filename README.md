@@ -2615,3 +2615,44 @@ Não atravessa a Internet, mantendo **segurança e baixa latência**.
 - Compartilhar recursos centrais como bancos de dados ou APIs internas.  
 - Integrar VPCs de ambientes de desenvolvimento, teste e produção.  
 
+# VPC Endpoints
+
+## O que é?
+O **VPC Endpoint** permite que você conecte sua **VPC diretamente a serviços AWS** sem precisar de um **gateway de Internet, NAT ou VPN**.  
+Ele mantém o tráfego **privado e seguro** dentro da rede AWS.
+
+Existem dois tipos principais de VPC Endpoints:
+
+1. **Interface Endpoint (AWS PrivateLink)**:  
+   - Conecta a VPC a serviços compatíveis via **interface de rede ENI**.  
+   - Suporta serviços como **EC2, S3, SNS, CloudWatch** e serviços de terceiros.
+
+2. **Gateway Endpoint**:  
+   - Conecta a VPC a **S3 e DynamoDB** usando um **gateway na tabela de rotas**.  
+   - Todo o tráfego permanece na rede AWS, sem passar pela Internet.  
+
+---
+
+## Principais Funcionalidades
+- Acesso privado e seguro a serviços AWS.  
+- Eliminação de exposição à Internet pública.  
+- Redução de custo com tráfego de Internet e NAT Gateway.  
+- Compatível com políticas IAM para controle de acesso granular.  
+
+---
+
+## Benefícios
+- Segurança: tráfego **não sai da rede AWS**.  
+- Baixa latência: comunicação direta com serviços AWS.  
+- Redução de custos: evita NAT Gateways e tráfego de Internet.  
+- Simplicidade: configuração centralizada via VPC e rotas.  
+
+---
+
+## Casos de Uso
+- Acesso privado ao **S3 e DynamoDB** sem passar pela Internet.  
+- Comunicação com serviços **AWS ou parceiros** via PrivateLink.  
+- Ambientes sensíveis que exigem **compliance e isolamento de rede**.  
+- Reduzir dependência de **firewalls e NAT Gateways** para serviços internos.  
+
+---
