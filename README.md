@@ -2514,3 +2514,9 @@ Ele possui duas funcionalidades principais:
 
 - **CodeGuru Reviewer** → analisa código fonte e identifica problemas de qualidade, segurança e boas práticas.  
 - **CodeGuru Profiler** → monitora aplicações em execução e aponta gargalos de performance e custo.  
+
+# AWS Health Dashboard
+
+## O que é?
+O **AWS Health Dashboard** é um serviço que fornece **informações personalizadas em tempo real** sobre a saúde dos serviços da AWS que você utiliza.  
+Ele substituiu o **AWS Service Health Dashboard** tradicional, oferecendo insights **específicos para sua conta**.
