@@ -2549,3 +2549,19 @@ Ele substituiu o **AWS Service Health Dashboard** tradicional, oferecendo insigh
 - Para definir acesso à internet e entre subnets, usamos **Tabelas de Roteamento (Route Tables)**
 
 <img width="436" height="512" alt="image" src="https://github.com/user-attachments/assets/c2e5b144-9a98-4435-a8b5-3a8cb6aa63e5" />
+
+# AWS Network ACL e Security Group
+
+## O que é?
+
+### Security Group (SG)
+Um **Security Group** atua como um **firewall virtual para instâncias EC2**, controlando o tráfego **entrante e/ou sainte** em nível de instância.  
+- Funciona no **nível da interface de rede**.  
+- **Stateful**: respostas a solicitações permitidas são automaticamente permitidas de volta.  
+
+### Network ACL (NACL)
+Um **Network ACL** é um **firewall em nível de sub-rede**, controlando o tráfego que entra ou sai da sub-rede inteira.  
+- Funciona no **nível da sub-rede**.  
+- **Stateless**: regras de entrada e saída devem ser definidas separadamente.  
+
+---
