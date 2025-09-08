@@ -2566,5 +2566,52 @@ Um **Network ACL** é um **firewall em nível de sub-rede**, controlando o tráf
 
 <img width="387" height="489" alt="image" src="https://github.com/user-attachments/assets/dba74958-7593-424a-8524-a22a410ba0e8" />
 
+---
+
+# VPC Flow Logs e VPC Peering
+
+## VPC Flow Logs
+
+### O que é?
+O **VPC Flow Logs** é um recurso que permite **capturar informações sobre o tráfego IP** que entra e sai das interfaces de rede (ENIs) dentro de uma VPC.  
+Esses logs ajudam a **monitorar, auditar e solucionar problemas de rede**.
+
+### Principais Funcionalidades
+- Registro de tráfego **permitido e negado** por Security Groups ou NACLs.  
+- Armazenamento em **CloudWatch Logs** ou **S3**.  
+- Monitoramento de tráfego interno e externo da VPC.  
+- Integração com **CloudWatch Insights** para análise detalhada.  
+
+### Benefícios
+- Diagnostica problemas de conectividade de rede.  
+- Ajuda em **auditoria e conformidade** de segurança.  
+- Permite **análise de tráfego e detecção de comportamento suspeito**.  
+
+### Casos de Uso
+- Solução de problemas de conectividade entre instâncias EC2.  
+- Auditoria de acessos a recursos críticos.  
+- Monitoramento de tráfego para detecção de ataques ou tráfego anômalo.  
 
 ---
+
+## VPC Peering
+
+### O que é?
+O **VPC Peering** é uma conexão de rede privada entre duas VPCs, permitindo **rotear tráfego entre elas** usando endereços IP privados.  
+Não atravessa a Internet, mantendo **segurança e baixa latência**.
+
+### Principais Funcionalidades
+- Conexão **privada e segura** entre VPCs na mesma ou em diferentes regiões.  
+- Tráfego **direto sem gateway, VPN ou Internet**.  
+- Total compatibilidade com **Security Groups e NACLs**.  
+
+### Benefícios
+- Compartilhamento de recursos entre VPCs (ex.: bancos de dados, serviços internos).  
+- Reduz custos de comunicação comparado a VPN ou Internet Gateway.  
+- Mantém isolamento seguro entre VPCs enquanto permite comunicação necessária.  
+
+### Casos de Uso
+- Conectar VPCs de diferentes equipes ou departamentos.  
+- Compartilhar recursos centrais como bancos de dados ou APIs internas.  
+- Integrar VPCs de ambientes de desenvolvimento, teste e produção.  
+
